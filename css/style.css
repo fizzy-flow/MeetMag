@@ -1,170 +1,48 @@
-body{
-	color: white;
-	margin:0;
-	padding:0;
-	height:100%;
-}
-#logo{
-/* 	border:1px solid black; */
-	position: center;
-
-}
-#below{
-	background-color:#637A61; 
-}
-#form{
+#news{
+background-color: none;
+height: auto;
+width: auto;
+float: 100%;
+margin-top: 5%;
+margin-bottom: 5%;
+margin-left: 5%;
+margin-right: 5%;
+padding-top: 20px;
+padding-bottom: 20px;
 
 }
 
-#footer{
-/* 	border:1px solid #cccccc; */
-	display:block;
-	position: fixed;
-	width:100%;
-	background-color:#4B4C4E;
-	bottom:0;
-}
-#footer img{
-	padding:0 0 0 10%;
-}
-#home{
-	margin-left:17%;
+.timendate{
+	background-color: white;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	border-top: thick double black;
 }
 
-#header{
-	border:1px solid green;
-	display:block;
-	position:relative;
-	top:0;
-	background-color:#009444;
-	width: 100%; 
-}
-h1{
-/* 	padding-top: 1%;  */
-	text-align:center;
-	color:white;
-}
-h1 button{
-	margin: 0 5% 0 0;
-	float: right;
-}
-#logout{
-	/*border:1px solid black;*/
-	position:absolute;
-	right:2em;
-}
-#back{
-	/*border:1px solid black;*/
-	position:absolute;
-	left:2em;
-}
-#content{
-/* 	display:block;
-	position:relative;
-	width:100%; */
-	padding-top: 5%;
-/* 	margin-bottom:3em; */
-	position:center;
-}
-#content_left{
-	float: left;
-	margin-left: 7em;
-	width: 50%;
-	
-}
-#content_right{
-	float: right;
-	width: 20%;	
-}
-#content table{
-float:left;
-padding-left:35%;
-/* border:1px solid black; */
-/* 	width: 70%; */
-	height: 30%;
-}
-#content h2,p,h3{
-	padding: 0 20% 0 42%;
-}
-.infoaccordionContent{
-	padding: 0 20% 0 42%;
-}
-#username,#password{
-	margin: 0 20% 0 42%;
-}
-#content img{
-	margin:0 20% 5% 42%;
-}
-#content button{
-	margin:8% 20% 0 42%;
-}
-#content input{
-margin-right:2em;
-}
-#content label{
-	font-size:1.5em;
-	float:left;
-	padding:4% 20% 0 32%;
-}
-#content input{
-	float:right;
-	margin:-2% 26% 0 22%;
+.update{
+	background-color: orange;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	border-top: thick double black;
 }
 
-#content textarea{
-	float:right;
-	margin:-2% 26% 0 22%;
-}
-#form label{
-	font-size: 1.5em;
-	float:left;
-	padding:4% 20% 0 32%;
-	/* margin-top:0.01em; */
-}
-#form select{
-	float:right;
-	margin:-2% 45% 0 22%;
-}
-#form input{
-	float:right;
-	margin:-2% 27% 0 22%;
-	/* margin-top:0.01em; */
-}
-#voting{
-	padding: 0 20% 0 42%;
-}
-#buttons{
-float:right;
-margin-right: 8em;
-margin-top:5em;
-}
-#view_buttons{
-	float:left;
-	margin-left:45%;
-	margin-top:5em;
+li{
+	list-style-type: none;
 }
 
-#add1{
-	margin:21.3% 2% 0 75%;
+label.yellow {
+	background-color: yellow
 }
-#add2{
-	margin:2.7% 2% 0 75%;
-}
-#left{
-	float: left;
-	margin-left: 20%;
-}
-#right{
-	float:left;
-	width:50%;
-}
-#meetings{
-	padding-top:15%;
-}
-/* 
-#layout{
-	/* border:1px solid black; 
-	padding-left: 20%;
-}
- */
 
+label.red {
+	background-color: red
+}
+
+label.green {
+	background-color: green
+}
+hr {
+	text:bold
+}
