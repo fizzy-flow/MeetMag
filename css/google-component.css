@@ -15,7 +15,7 @@
 }
 
 /* Icomoon.com */
-
+/* seach box color (used to be white)*/
 .gn-menu-main,
 .gn-menu-main ul {
 		margin: 0;
@@ -33,7 +33,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 100%; 
 		height: 60px;
 		font-size: 13px;
 }
@@ -93,6 +93,8 @@
 		content: "";
 }
 
+
+/* navigation menu */
 .gn-menu-wrapper {
 		position: fixed;
 		top: 60px;
@@ -101,7 +103,7 @@
 		overflow: hidden;
 		width: 60px;
 		border-top: 1px solid #c6d0da;
-		background: white;
+		background: #314a59;
 		-webkit-transform: translateX(-60px);
 		-moz-transform: translateX(-60px);
 		transform: translateX(-60px);
@@ -245,7 +247,7 @@ input.gn-search:focus {
 		content: "\e007"
 }
 
-.gn-icon-photoshop::before {
+.gn-icon-friends::before {
 		content: "\e001"
 }
 
@@ -309,11 +311,12 @@ input.gn-search:focus {
 }
 
 .gn-menu-wrapper.gn-open-all {
-		width: 340px
+		width: 340px;
 }
 
 .gn-menu-wrapper.gn-open-all .gn-submenu li {
 		height: 60px
+
 }
 
 @media screen and (max-width: 422px) { 
@@ -322,6 +325,7 @@ input.gn-search:focus {
 			-moz-transform: translateX(0px);
 			transform: translateX(0px);
 			width: 100%;
+
 	}
 
 	.gn-menu-wrapper.gn-open-all .gn-scroller {
