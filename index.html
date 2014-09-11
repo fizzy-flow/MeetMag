@@ -9,10 +9,31 @@
 		<link rel="stylesheet" type="text/css" href="css/google-normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/google-style.css" />
 		<link rel="stylesheet" type="text/css" href="css/google-component.css" />
+		<link rel="stylesheet" type="text/css" href="css/vertical-ticker-style.css"/>
+
 		
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 
 		<script src="js/google-modernizr.custom.js"></script>
+
+<!--vertical-ticker -->
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.totemticker.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#vertical-ticker').totemticker({
+				row_height	:	'100px',
+				next		:	'#ticker-next',
+				previous	:	'#ticker-previous',
+				stop		:	'#stop',
+				start		:	'#start',
+				mousestop	:	true,
+			});
+		});
+	</script>
+
+
 
 	</head>
 	<body>
@@ -55,39 +76,28 @@
 
 <div id="news">
 
-        <div>
-			<ul>
-			              <li class="timendate"> Wednesday, January 2, 2014 </li>  
+<body>
+	
 
-			              <li class="update">   
-			                <h2> Kahoon project</h2>
-			                <p>Meeting on sunday at 5:15 am @ Fizzy's coffee </p>
-			                <p>10:38 pm</p></a>
-			              </li>
-
-			              <li class="update">   
-			                <h2>Jack in the Box Project</h2>
-			                <p>Aditya Rahardi rescheduled the meeting to monday @ 7 am </p>
-			                <p>11:22 am</p>
-			              </li>
-
-			        	  <li class="update"> 
-			                <h2>Fizzy-flow project</h2>
-			                <p>Meeting was canceld by Gary</p>
-			                <p>8:55 am</p>
-			              </li>
-
-			              <li class="timendate">Tuesday, January 1, 2014 </li>   
-			              <li class="update">  
-			                <h2>Roland do tolt</h2>
-			                <p>invited you to the "loot brick" meeting on the 21st of june</p>
-			                <p>10.11 am</p>
-			              </li>
-			</ul>
-
-
-		</div>
-
+	
+	<div id="wrapper">
+	
+		<h1 class="logo">Totem Ticker</h1>
+	
+		<ul id="vertical-ticker">
+			<li>One Time</li>
+			<li>Baby</li>
+			<li>One Less Lonely Girl</li>
+			<li>Somebody to Love</li>
+			<li>Eenie Meenie</li>
+			<li>Never Say Never</li>
+			<li>U Smile</li>
+		</ul>
+		
+		<p><a href="#" id="ticker-previous">Previous</a> / <a href="#" id="ticker-next">Next</a> / <a id="stop" href="#">Stop</a> / <a id="start" href="#">Start</a></p>
+		<p>Roll over the ticker to stop scrolling</p>
+		
+	</div>
 		</div><!-- /container -->
 
 
