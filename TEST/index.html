@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Totem Ticker</title>
+	<link rel="stylesheet" type="text/css" href="css/vertical-ticker-style.css"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.totemticker.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#vertical-ticker').totemticker({
+				row_height	:	'100px',
+				next		:	'#ticker-next',
+				previous	:	'#ticker-previous',
+				stop		:	'#stop',
+				start		:	'#start',
+				mousestop	:	true,
+			});
+		});
+	</script>
+</head>
+
+<body>
+	
+	<div id="banner"> 
+		<div class="logo-zone"><h1 id="logo-link"><a href="http://buildinternet.com">Build Internet</a></h1></div> 
+		<div class="clear">&nbsp;</div>
+	</div>
+	
+	<div id="wrapper">
+	
+		<h1 class="logo">Totem Ticker</h1>
+	
+		<ul id="vertical-ticker">
+			<li>One Time</li>
+			<li>Baby</li>
+			<li>One Less Lonely Girl</li>
+			<li>Somebody to Love</li>
+			<li>Eenie Meenie</li>
+			<li>Never Say Never</li>
+			<li>U Smile</li>
+		</ul>
+		
+		<p><a href="#" id="ticker-previous">Previous</a> / <a href="#" id="ticker-next">Next</a> / <a id="stop" href="#">Stop</a> / <a id="start" href="#">Start</a></p>
+		<p>Roll over the ticker to stop scrolling</p>
+		
+	</div>
+	
+	
+</body>	
+</html>

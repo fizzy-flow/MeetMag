@@ -1,31 +1,17 @@
-#news{
-background-color: none;
-height: auto;
-width: auto;
-float: 100%;
-margin-top: 5%;
-margin-bottom: 5%;
-margin-left: 5%;
-margin-right: 5%;
-padding-top: 20px;
-padding-bottom: 20px;
 
+img{
+	vertical-align:middle;
+	margin-right: 5%;
+	margin-left: 5%;
 }
-
-.timendate{
-	background-color: white;
-	padding-left: 20px;
-	padding-bottom: 20px;
-	padding-top: 20px;
-	border-top: thick double black;
-}
-
-.update{
-	background-color: orange;
-	padding-left: 20px;
-	padding-bottom: 20px;
-	padding-top: 20px;
-	border-top: thick double black;
+.nav-logo{
+	margin-left: 0;
+	margin-right: 0;
+	background-image: url("img/originals/nav-Logo.png");
+	background-color: #596a7b;
+	margin-top: 10%;
+	height: 267px;
+	width:338px;
 }
 
 li{

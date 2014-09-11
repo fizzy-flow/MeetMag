@@ -9,18 +9,19 @@
 
 body{
 	font-family:Lucida Grande, Helvetica, Arial, sans-serif;
-	background: url('../images/demo-bg.jpg') center 105px no-repeat #1a110a;
+	background: url('../images/demo-bg.jpg') center 105px no-repeat #596a7b;
 	-webkit-font-smoothing:antialiased;
 }
 
 h1.logo{
-	overflow:hidden; 
-	text-indent:-9999em; 
+	overflow:visible;  
 	width:230px; 
-	height:70px;
-	margin:0 auto 15px auto;
+	height:100px;
+	margin:0 auto 0 auto;
 	background: url('../images/totem-logo.png') top left no-repeat;
 }
+
+
 
 /* Top Banner */
 #banner .clear{ 
@@ -72,10 +73,12 @@ h1.logo{
 	text-decoration:none;
 }
 
+/* news feed width */
 #wrapper{
 	padding:30px;
-	width:100%;
+	width:70%;
 	margin:0 auto;
+	margin-top: 40px;
 }
 
 p{
@@ -84,6 +87,9 @@ p{
 	text-align:center;
 }
 
+.newsfeed{
+	font-size: medium;
+}
 .nav{}
 	
 #wrapper a, #footer a{
@@ -114,9 +120,9 @@ p{
 	It's just an example, so customize away!
 */
 
-/* height of the scroler*/
+/* news feed height */
 #vertical-ticker{
-	height:300px;
+	height:640px;
 	overflow:hidden;
 	margin:0; 
 	padding:0;
@@ -126,11 +132,13 @@ p{
 	#vertical-ticker li{
 		padding:35px 20px;
 		display:block;
-		background:#79B9BF;
+		background:#ffffff;
 		color:#333;
-		border-bottom:1px solid #ddd;
+		border-bottom:8px solid #343d45;
 		text-align:center;
 		font-size:25px;
 		font-weight:bold;
 		font-family: Helvetica Neue, times, serif;
+		moz-border-radius: 10px;
+    	border-radius: 10px;
 	}
