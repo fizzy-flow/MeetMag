@@ -1,0 +1,9 @@
+Welcome {USERNAME}!
+
+Thank-you for creating an account.
+
+Please confirm your account by copy and pasting the link below into your browsers address bar.
+
+{SITEPATH}/confirm.php?email={EMAIL}&key={KEY}
+
+Thanks!

@@ -305,6 +305,7 @@ p.change_link{
 	-webkit-box-shadow: 5px;
 	-moz-border-radius: 5px;
 		 border-radius: 5px;
+			
 }
 #register{	
 	z-index: 21;
@@ -329,32 +330,32 @@ p.change_link{
 }
 #toregister:target ~ #wrapper #login,
 #tologin:target ~ #wrapper #register{
-	-webkit-animation-name: fadeOutLeft;
-	-moz-animation-name: fadeOutLeft;
-	-ms-animation-name: fadeOutLeft;
-	-o-animation-name: fadeOutLeft;
-	animation-name: fadeOutLeft;
+	-webkit-animation-name: fadeOutLeftBig;
+	-moz-animation-name: fadeOutLeftBig;
+	-ms-animation-name: fadeOutLeftBig;
+	-o-animation-name: fadeOutLeftBig;
+	animation-name: fadeOutLeftBig;
 }
 
 /** the actual animation, credit where due : http://daneden.me/animate/ ***/
 .animate{
-	-webkit-animation-duration: 0.5s;
+	-webkit-animation-duration: 1s;
 	-webkit-animation-timing-function: ease;
 	-webkit-animation-fill-mode: both;
 	
-	-moz-animation-duration: 0.5s;
+	-moz-animation-duration: 1s;
 	-moz-animation-timing-function: ease;
 	-moz-animation-fill-mode: both;
 	
-	-o-animation-duration: 0.5s;
+	-o-animation-duration: 1s;
 	-o-animation-timing-function: ease;
 	-o-animation-fill-mode: both;
 	
-	-ms-animation-duration: 0.5s;
+	-ms-animation-duration: 1s;
 	-ms-animation-timing-function: ease;
 	-ms-animation-fill-mode: both;
 	
-	animation-duration: 0.5s;
+	animation-duration: 1s;
 	animation-timing-function: ease;
 	animation-fill-mode: both;
 }
