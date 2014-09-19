@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+
+<?php
+include_once 'inc/php/config.php';
+
+$results = mysql_query("SELECT * FROM project");
+$row_count = mysql_num_rows($results);
+
+echo $row_count;
+
+while ($row_users = mysql_fetch_array($results)) {
+    //output a row here
+    echo $row_users['project_name'];
+	echo "Test";
+}
+
+echo "BLA BLA BLA";
+
+?>
+
+
 <html ng-app="test">
 
 

@@ -47,7 +47,7 @@ if(isset($_POST['signup'])){
 		$password = md5($password);
 			
 		//add to the database
-		$add = mysql_query("INSERT INTO `users` VALUES(NULL,'$firstName','$lastName','$password','$emailsignup',0)");
+		$add = mysql_query("INSERT INTO `user` VALUES(NULL,'$firstName','$lastName','$password','$emailsignup',0)");
 		
 		if($add){
 			
