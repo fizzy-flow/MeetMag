@@ -124,7 +124,7 @@ if(isset($_POST['signup'])){
                             <form method="post" autocomplete="on" action="login.php"> 
                                 <h1>Log in</h1> 
                                 <p> 
-                                    <label for="loginemail" class="loginemail" data-icon="u" > Your emailsignup</label>
+                                    <label for="loginemail" class="loginemail" data-icon="u" > Your email</label>
                                     <input id="loginemail" name="loginemail" required="required" type="text" placeholder="mymail@mail.com"/>
                                 </p>
                                 <p> 
@@ -149,15 +149,15 @@ if(isset($_POST['signup'])){
                             <form  action="" method="post" autocomplete="on"> 
                                 <h1> Sign up </h1>
                                 <p> 
-                                    <label for="firstnamesignup" class="fname" data-icon="u">Your firstName</label>
+                                    <label for="firstnamesignup" class="fname" data-icon="u">Your first name</label>
                                     <input id="firstnamesignup" name="firstnamesignup" required="required" type="text" placeholder="John" />
                                 </p>
                                 <p> 
-                                    <label for="lastnamesignup" class="lname" data-icon="u">Your firstName</label>
+                                    <label for="lastnamesignup" class="lname" data-icon="u">Your last name</label>
                                     <input id="lastnamesignup" name="lastnamesignup" required="required" type="text" placeholder="Smith" />
                                 </p>
                                 <p> 
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your emailsignup</label>
+                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email signup</label>
                                     <input id="emailsignup" name="emailsignup" required="required" type="emailsignup" placeholder="mysupermail@mail.com"/> 
                                 </p>
                                 <p> 
@@ -169,7 +169,8 @@ if(isset($_POST['signup'])){
                                     <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
                                 </p>
                                 <p class="signin button"> 
-									<input type="submit" value="Sign up" name="signup" /> 	
+									<input type="submit" value="Sign up" name="signup" />
+									
 								</p>
                                 <p class="change_link">  
 									Already a member ?

@@ -32,3 +32,18 @@ label.green {
 hr {
 	text:bold
 }
+
+
+.friends-headerTab p{
+	font-size: medium;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+/* project file */
+
+.project-button{
+	margin-top: 5px;
+	float: left;
+	clear:both;
+}

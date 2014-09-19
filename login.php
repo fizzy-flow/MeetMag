@@ -27,7 +27,7 @@
       $_SESSION['email'] = $email;
       $_SESSION['password'] = $password;
       echo "<p>Logged in successfully</p>";
-      header('Location:menu.html');
+      header('Location:Homepage.html');
     }
 
 }
