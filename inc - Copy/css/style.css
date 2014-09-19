@@ -1,0 +1,83 @@
+/* --
+I'm using CSS3 styles to speed this up without comprimising looks
+This isn't valid for older browsers, proceed with caution!
+-- */
+
+body{
+	background: #CEE2EB;
+	font-size: 62.5%;
+	color: #111;
+	font-family: Verdana;
+}
+
+fieldset, ul{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+ul{list-style: none;}
+
+h1{
+	font-weight: lighter;
+	color: #4299ED;
+	padding: 0;
+	margin: 0;
+	font-size: 2.5em;
+	border-bottom: 2px solid #f1f1f1;
+	padding: 0 0 10px 0;
+	margin: 0 0 10px 0;
+}
+
+#content{
+	margin: 25px auto;
+	width: 600px;
+	padding: 20px;
+	background: white;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+ul.alert{
+	width: 96.5%;
+	padding: 1px 10px;
+	background: #e1e1e1;
+	font-size: 1.3em;
+	margin: 0 0 10px 0;
+}
+
+ul.alert.error{
+	background: #ffbcbc;
+	color: #a40f0f;
+	border-bottom: 2px solid #e59898;
+}
+
+ul.alert.success{
+	background: #d2ffc8;
+	color: #227d0d;
+	border-bottom: 2px solid #9fde91;
+}
+
+fieldset li{
+	margin: 0 0 15px 0;
+}
+
+input[type=text],
+input[type=password]{
+    width: 98%;
+    margin: 0;
+	padding: 7px 5px 4px;
+	color: #555;
+	font-size: 18px;
+	font-family: inherit;
+	border-color: #E5E5E5;
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	background: #fff url(../../img/bg_input.png) no-repeat scroll left top;
+}
+
+label{
+	color: #333;
+	font-size: 1.4em;
+	line-height: 1.9em;
+}
