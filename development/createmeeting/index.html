@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>MeetMag Creating Meeting</title>
+		<meta name="description" content="Blueprint: Blueprint: Responsive Multi-Column Form" />
+		<meta name="keywords" content="responsive form, inputs, html5, responsive, multi-column, fluid, media query, template" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+		<script src="js/blah.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header class="clearfix">
+				<span>MeetMag Creating Meeting<span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
+				<h1>Create a Meeting</h1>
+				<nav>
+					<a href="http://tympanus.net/Blueprints/TooltipMenu/" class="bp-icon bp-icon-prev" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
+					<a href="http://tympanus.net/Blueprints/AnimatedHeader/" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a>
+					<a href="http://tympanus.net/codrops/?p=15320" class="bp-icon bp-icon-drop" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>
+					<a href="http://tympanus.net/codrops/category/blueprints/" class="bp-icon bp-icon-archive" data-info="Blueprints archive"><span>Go to the archive</span></a>
+				</nav>
+			</header>	
+			<div class="main" ng-app="memberssss">
+				<form class="cbp-mc-form">
+					<div class="cbp-mc-column" ng-controller="numMembers">
+						<label for="first_name">Project Title</label>
+	  					<input type="text" id="project_title" name="project_title" placeholder="MeetMag Project"/>
+	  					<label for="last_name">Name of Meeting</label>
+	  					<input type="text" id="meeting_name" name="meeting_name" placeholder="Star Wars Meeting"/>
+	  					<label for="email">Enter number of members</label>
+	  					<input type="text" id="member" name="member" placeholder="Enter number of members"></input>
+	  					<div>
+		  					<label for="list_member">List Member</label>
+		  					<label>Member 1</label>
+		  					<select id="list_member" name="List Member">
+		  						<option>Member 1</option>
+		  						<option>Member 2</option>
+		  						<option>Member 3</option>
+		  						<option>Member 4</option>
+		  					</select>
+		  					<label>Member 2</label>
+		  					<select id="list_member" name="List Member">
+		  						<option>Member 1</option>
+		  						<option>Member 2</option>
+		  						<option>Member 3</option>
+		  						<option>Member 4</option>
+		  					</select>
+		  					<label>Member 3</label>
+		  					<select id="list_member" name="List Member">
+		  						<option>Member 1</option>
+		  						<option>Member 2</option>
+		  						<option>Member 3</option>
+		  						<option>Member 4</option>
+		  					</select>
+	  					</div>
+	  					<label for="agenda">Agendas</label>
+	  					<input class="input" id="agenda" name="agendas" type="text" ng-repeat="agenda in agendas" placeholder="{{agenda.name + ', Importance: ' + agenda.importance}}"></input>
+	  				</div>
+	  				<div class="cbp-mc-column">
+	  					<label for="date">Date</label>
+	  					<input type="date" id="phone" name="date">
+	  					<label>Duration</label>
+	  					<label>Start time</label>
+	  					<input type="time" id="starttime">
+	  					<label>End time</label>
+	  					<input type="time" id="endtime">
+	  				</div>
+	  				<div class="cbp-mc-column">
+	  					<label for="location">Location</label>
+	  					<input type="text" id="location" name="location">
+	  					<label for="tag">Tags</label>
+	  					<textarea id="tag" name="tag"></textarea>
+	  				</div>
+	  				<div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="Create meeting"/></div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

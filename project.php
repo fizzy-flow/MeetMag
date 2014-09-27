@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
 <?php
+session_start();
+ if (!isset($_SESSION['email'])){
+	header('Location:index.php');
+ }
+
 include_once 'inc/php/config.php';
 
 $results = mysql_query("SELECT * FROM project");
@@ -11,7 +16,6 @@ echo $row_count;
 while ($row_users = mysql_fetch_array($results)) {
     //output a row here
     echo $row_users['project_name'];
-	echo "Test";
 }
 
 echo "BLA BLA BLA";
@@ -58,7 +62,7 @@ echo "BLA BLA BLA";
                         <span class="ui-li-count"> 6 </span>
                     </li> 
 
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px">   
+                    <li style="margin-left:10px; margin-right:10px; margin-top:5px">   
                       <h2>Faisal Al Siddiqi</h2>
                       <p>Faisal wants to participate the meeting with the client</p>
 								<button type="button" style="width:50px; display: inline-block; float:right">S</button>
@@ -67,7 +71,7 @@ echo "BLA BLA BLA";
 								
                       <p class="ui-li-aside">10:00 pm</p>
                     </li>
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px">   
+                    <li style="margin-left:10px; margin-right:10px; margin-top:5px">   
                       <h2>Roland du Toit</h2>
                       <p>Roland is negotiating with the client</p>
 								<button type="button" style="width:50px; display: inline-block; float:right">S</button>
@@ -78,7 +82,7 @@ echo "BLA BLA BLA";
                     </li>
 
 
-              	  <li style="margin-left:100px; margin-right:100px; margin-top:5px"> 
+              	  <li style="margin-left:10px; margin-right:10px; margin-top:5px"> 
                       <h2>Gary Foo Ming Rui</h2>
                       <p>Gary has decided to change his name into Gary because he felt it's a cool name </p>
 								<button type="button" style="width:50px; display: inline-block; float:right">S</button>
@@ -87,7 +91,7 @@ echo "BLA BLA BLA";
                       <p class="ui-li-aside">9:55 am</p>
                     </li>
 
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px"> 
+                    <li style="margin-left:10px; margin-right:10px; margin-top:5px"> 
                       <h2>Aditya Rahardi</h2>
                       <p>Aditya has developed unknown super power</p>
 								<button type="button" style="width:50px; display: inline-block; float:right">S</button>
@@ -96,7 +100,7 @@ echo "BLA BLA BLA";
                       <p class="ui-li-aside">15:10 am</p>
                     </li>
 
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px">
+                    <li style="margin-left:10px; margin-right:10px; margin-top:5px">
                       <h2>Tengzheng Wang</h2>
                       <p>Tengzheng hold a discussion group with the team </p>
 								<button type="button" style="width:50px; display: inline-block; float:right">S</button>
@@ -105,7 +109,7 @@ echo "BLA BLA BLA";
                       <p class="ui-li-aside">16:15 am</p>
                     </li>
               	  
-                  <li style="margin-left:100px; margin-right:100px; margin-top:5px">
+                  <li style="margin-left:10px; margin-right:10px; margin-top:5px">
                       <h2>Juntian Tao</h2>
                       <p>Juntian writes a note</p>
 								<button type="button" style="width:50px; display: inline-block; float:right">S</button>

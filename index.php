@@ -35,6 +35,7 @@ if(isset($_POST['signup'])){
 	$lastName = mysql_real_escape_string($_POST['lastnamesignup']);
 	$password = mysql_real_escape_string($_POST['passwordsignup']);
 	$emailsignup = mysql_real_escape_string($_POST['emailsignup']);
+	$phone_num = mysql_real_escape_string($_POST['pnosignup']);
 	
 	//quick/simple validation
 	//if(empty($firstName)){ $action['result'] = 'error'; array_push($text,'You forgot your firstName'); }
@@ -47,7 +48,7 @@ if(isset($_POST['signup'])){
 		$password = md5($password);
 			
 		//add to the database
-		$add = mysql_query("INSERT INTO `user` VALUES(NULL,'$firstName','$lastName','$password','$emailsignup',0)");
+		$add = mysql_query("INSERT INTO `user` (email, phone_num, password, first, last) VALUES('$emailsignup','$phone_num','$password','$firstnamesignup',$lastnamesignup)");
 		
 		if($add){
 			
@@ -93,6 +94,9 @@ if(isset($_POST['signup'])){
 				array_push($text,'Confirm row was not added to the database. Reason: ' . mysql_error());
 				
 			}
+		
+		// Redirect to homepage
+		header('Location:index.php');
 			
 		}else{
 		
@@ -159,6 +163,10 @@ if(isset($_POST['signup'])){
                                 <p> 
                                     <label for="emailsignup" class="youmail" data-icon="e" > Your email signup</label>
                                     <input id="emailsignup" name="emailsignup" required="required" type="emailsignup" placeholder="mysupermail@mail.com"/> 
+                                </p>
+                                <p> 
+                                    <label for="pnosignup" class="pno" data-icon="e" > Your phone number signup</label>
+                                    <input id="pnosignup" name="pnosignup" required="required" type="pnosignup" placeholder="04xxxxxxxx"/> 
                                 </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
