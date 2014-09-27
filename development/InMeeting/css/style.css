@@ -51,6 +51,44 @@ body
 	color: #FFF;
 }
 
+/** Voting Style **/
+#voting {
+	color: #fff;
+	font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;
+    }
+    #voting #question {
+        display: block;
+        padding: 20px;
+        letter-spacing: -3px;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 40px;
+    }
+    #voting div {
+        font-weight: bold;
+        letter-spacing: -3px;
+        background: #1ABC9C;
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 34px;
+        color: #00000;
+        border-left: 20px solid #333;
+        width: 100px;
+        -webkit-border-radius: 0.5em;
+        -moz-border-radius: 0 0.5em 0.5em 0;
+        border-radius: 0 1.5em 1.5em 0;
+    }
+    #voting div a {
+        border-radius: 0.3em;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 15px;
+        background: #333;
+        margin: 0 20px;
+    }
+    #voting div a:hover {
+        color: #fff;
+    }
 
 /** Ordered List Styles **/
 ol {
