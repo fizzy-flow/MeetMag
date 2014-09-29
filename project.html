@@ -43,6 +43,22 @@ echo "BLA BLA BLA";
 			<script src="js/ui-bootstrap-0.11.0.min.js"></script>
 			<link rel="stylesheet" href="css/style.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+
+<!-- action menu (top Left) -->
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Responsive Multi-Level Menu - Demo 2</title>
+		<meta name="description" content="Responsive Multi-Level Menu: Space-saving drop-down menu with subtle effects" />
+		<meta name="keywords" content="multi-level menu, mobile menu, responsive, space-saving, drop-down menu, css, jquery" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
 	</head>
 
 
@@ -124,6 +140,36 @@ echo "BLA BLA BLA";
 		    <div class="navigation">
 
 		        <ul id="gn-menu" class="gn-menu-main">
+
+<!-- action menu (top Left) -->
+
+				<div id="dl-menu" class="dl-menuwrapper" style="right:30px; position:absolute; z-index:10; float:right;  top: 8px; align-content:right">
+					<button class="dl-trigger" style="padding-right: 30px;">Open Menu</button>
+					<ul class="dl-menu" style="right: 5px; width: 200px;left: -100px;">
+						
+						<li>
+							<a href="#">Fashion</a>
+							
+						</li>
+						<li>
+							<a href="#">Electronics</a>
+							
+						</li>
+						<li>
+							<a href="#">Furniture</a>
+							
+						</li>
+						<li>
+							<a href="#">Bedroom</a>
+									
+						</li>
+
+					</ul>
+				</div><!-- /dl-menuwrapper -->
+
+
+
+<!-- main nav menu -->
 		            <li class="gn-trigger">
 		                <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
 
@@ -144,7 +190,13 @@ echo "BLA BLA BLA";
 												<li>
 													<a href="friends.html"> <img src="img/friendsicon.png"/>Friends</a>
 												</li>
-												<li><a href"settings.html" class="gn-icon gn-icon-cog">Settings</a></li>
+												<li><a href"settings.html" class="gn-icon gn-icon-cog">Settings</a>
+												</li>
+												
+												<li>
+													<a href="index.php"> <img src="img/logout.png"/>LogOut</a>
+												</li>
+
 											</ul>
 		                      </div>
 <!-- /gn-scroller -->
@@ -162,6 +214,16 @@ echo "BLA BLA BLA";
 		      new gnMenu( document.getElementById( 'gn-menu' ) );
 		    </script>
 
+<!-- action menu (top Left) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.dlmenu.js"></script>
+		<script>
+			$(function() {
+				$( '#dl-menu' ).dlmenu({
+					animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+				});
+			});
+		</script>
 
 </body>
 </html>

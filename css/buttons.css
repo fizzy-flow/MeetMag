@@ -1,0 +1,93 @@
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner
+{
+    padding: 0;
+    border: 0;
+}
+
+.btn
+{
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	font-family: "Open Sans", Arial, Verdana, Helvetica, sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 600;
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: #FFF !important;
+	outline: none;
+	text-align: center;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+	.btn:after
+	{
+		content: '';
+		position: absolute;
+		z-index: -1;
+	}
+
+/* Button 5 */
+
+.btnstyle
+{
+	background: #1ABC9C;
+	color: #FFF;
+	padding: 9px 0;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.autowidth
+{
+	width: auto;
+	padding: 9px 30px;
+}
+
+	.btn-5:active
+	{
+		background: #148F77;
+		top: 2px;
+	}
+
+		.btnstyle span
+		{
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			
+			-webkit-transition: all 0.3s;
+			-webkit-backface-visibility: hidden;
+			-moz-transition: all 0.3s;
+			-moz-backface-visibility: hidden;
+			transition: all 0.3s;
+			backface-visibility: hidden;
+		}
+
+			.btnstyle:before
+			{
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				font-size: 22px;
+				
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				transition: all 0.3s;
+			}
+
+				.btnstyle:active:before
+				{
+					color: #FFF;
+				}
+

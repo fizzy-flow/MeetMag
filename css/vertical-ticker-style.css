@@ -75,10 +75,14 @@ h1.logo{
 
 /* news feed width */
 #wrapper{
-	padding:30px;
+	/*padding:30px;
 	width:70%;
 	margin:0 auto;
-	margin-top: 40px;
+	margin-top: 40px;*/
+	width: 90%;
+	padding-bottom: 5%;
+	margin-right: 5%;
+	margin-left:5%;
 }
 
 p{
@@ -132,9 +136,9 @@ p{
 	#vertical-ticker li{
 		padding:35px 20px;
 		display:block;
-		background:#ffffff;
+		background:#222;
 		color:#333;
-		border-bottom:8px solid #343d45;
+		border-bottom:8px solid #1ABC9C;
 		text-align:center;
 		font-size:25px;
 		font-weight:bold;
