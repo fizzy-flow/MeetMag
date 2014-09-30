@@ -292,6 +292,7 @@ a
 		.section .content .fullwidth .main p
 		{
 			margin: 0 0 20px 0;
+			text-align: left;
 		}
 		
 			.section .content .fullwidth .main strong
