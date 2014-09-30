@@ -14,18 +14,14 @@
 		<script src="js/modernizr.custom.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 		<script src="js/blah.js"></script>
+		<script src="js/time.js"></script>
+		<script src="js/agendadesc.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			<header class="clearfix">
 				<span>MeetMag Creating Meeting<span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
 				<h1>Create a Meeting</h1>
-				<nav>
-					<a href="http://tympanus.net/Blueprints/TooltipMenu/" class="bp-icon bp-icon-prev" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
-					<a href="http://tympanus.net/Blueprints/AnimatedHeader/" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a>
-					<a href="http://tympanus.net/codrops/?p=15320" class="bp-icon bp-icon-drop" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>
-					<a href="http://tympanus.net/codrops/category/blueprints/" class="bp-icon bp-icon-archive" data-info="Blueprints archive"><span>Go to the archive</span></a>
-				</nav>
 			</header>	
 			<div class="main" ng-app="memberssss">
 				<form class="cbp-mc-form">
@@ -34,6 +30,8 @@
 	  					<input type="text" id="project_title" name="project_title" placeholder="MeetMag Project"/>
 	  					<label for="last_name">Name of Meeting</label>
 	  					<input type="text" id="meeting_name" name="meeting_name" placeholder="Star Wars Meeting"/>
+	  					<label for="last_name">Meeting Description</label>
+	  					<input type="text" id="meeting_description" name="meeting_description" placeholder="Write description here..."/>
 	  					<label for="email">Enter number of members</label>
 	  					<input type="text" id="member" name="member" placeholder="Enter number of members"></input>
 	  					<div>
@@ -60,8 +58,18 @@
 		  						<option>Member 4</option>
 		  					</select>
 	  					</div>
-	  					<label for="agenda">Agendas</label>
-	  					<input class="input" id="agenda" name="agendas" type="text" ng-repeat="agenda in agendas" placeholder="{{agenda.name + ', Importance: ' + agenda.importance}}"></input>
+	  					<label for="agenda">Agenda Title</label>
+	  					<input class="input" id="{{'agenda' + $index +'Agenda Title'}}" name="agendas" type="text" ng-repeat-start="agenda in agendas" placeholder="{{agenda.name + ', Importance: ' + agenda.importance}}"></input>
+	  					<label for="agenda">Agenda Description</label>
+	  					<input type="text" id="{{'agenda'+ $index +'Agenda Description'}}" value="Write a description here..."></input>
+						<label for="agenda">Estimation Time</label>
+	  					<table ng-repeat-end>
+	  						<tr>
+	  							<td>Hour(s): <input type="number" id="{{'agenda'+$index+'Hours'}}" min=0 max=59></td>
+	  							<td>Minute(s): <input type="number" id="{{'agenda'+$index+'Minutes'}}" min=0 max=59></td>
+	  							<td>Second(s): <input type="number" id="{{'agenda'+$index+'Seconds'}}" min=0 max=59></td>
+	  						</tr>
+	  					</table>
 	  				</div>
 	  				<div class="cbp-mc-column">
 	  					<label for="date">Date</label>

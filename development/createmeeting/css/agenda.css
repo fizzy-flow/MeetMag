@@ -1,0 +1,10 @@
+.foo {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	line-height: 1.5;
+	font-size: 1.4em;
+	padding: 3px 9px;
+	color: #fff;
+	display: block;
+	width: 20%;
+	background: transparent;
+}

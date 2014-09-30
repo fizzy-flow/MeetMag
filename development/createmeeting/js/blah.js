@@ -16,6 +16,7 @@
                 importance: "Life or Death"
             }
         ];
+
         $scope.numMembers = 0;
         $scope.populate = function() {
             $scope.members = new Array(numMembers);
