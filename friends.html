@@ -35,7 +35,17 @@
         
         <link rel="stylesheet" type="text/css" href="css/menustyle.css" />
 
-        <script src="js/google-modernizr.custom.js"></script></head>
+        <script src="js/google-modernizr.custom.js"></script>
+
+<!-- tabs -->
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/tab-normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/tab-demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/tab-tabs.css" />
+        <link rel="stylesheet" type="text/css" href="css/tab-tabstyles.css" />
+        <script src="js/tab-modernizr.custom.js"></script>
+
+    </head>
 
 
 <!-- action menu (top Left) -->
@@ -145,11 +155,25 @@
 
 
 
+
+
+
             <div class="fullwidth">
                 <div class="main" style="margin:0; width:100%; height:100%">
 
 <div data-role="main" class="ui-content" style="margin-top:50px">
-              <ul data-role="listview" data-inset="true">
+                        <section>
+                <div class="tabs tabs-style-bar">
+                    <nav>
+                        <ul>
+                            <li><a href="#Friends" class="icon icon-home"><span> Friends</span></a></li>
+                            <li><a href="#Groups" class="icon icon-box"><span>Groups</span></a></li>
+
+                        </ul>
+                    </nav>
+                    <div class="content-wrap">
+                <section id="Friends">
+                <ul data-role="listview" data-inset="true">
 
                     <li data-role="list-divider" style=" color: #1ABC9C; font-size: x-large; padding: 20px; margin-left: 90px">Friends 
                         <span class="ui-li-count" style="float: right; margin-right: 10%"> 6 </span>
@@ -193,6 +217,53 @@
 
                     
               </ul>
+          </section>
+
+          <section id="Groups">
+
+                <ul data-role="listview" data-inset="true">
+
+                    <li data-role="list-divider" style=" color: #1ABC9C; font-size: x-large; padding: 20px; margin-left: 90px">Groups 
+                        <span class="ui-li-count" style="float: right; margin-right: 10%"> 5 </span>
+                    </li> 
+
+
+                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
+
+                      <h2>Group 1</h2>
+                      <p>Faisal wants to participate the meeting with the client</p></a>
+                    </li> 
+
+                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
+
+                      <h2>Group 2</h2>
+                      <p>Roland is negotiating with the client</p></a>
+                    </li>
+
+                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
+
+                      <h2>Group 3</h2>
+                      <p>Gary has decided to change his name into Gary because he felt it's a cool name </p></a>
+                    </li>
+
+                     <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
+
+                      <h2>Group 4</h2>
+                      <p>Gary has decided to change his name into Gary because he felt it's a cool name </p></a>
+                    </li>
+
+                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
+
+                      <h2>Group 5</h2>
+                      <p>Gary has decided to change his name into Gary because he felt it's a cool name </p></a>
+                    </li>
+
+
+
+                    
+              </ul>
+
+          </section>
           </div>
         </div>
             </div>
@@ -234,6 +305,17 @@
                     animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
                 });
             });
+        </script>
+
+        <script src="js/tab-cbpFWTabs.js"></script>
+        <script>
+            (function() {
+
+                [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+                    new CBPFWTabs( el );
+                });
+
+            })();
         </script>
 
 </body>
