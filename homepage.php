@@ -5,6 +5,21 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 <head>
 <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
+
+
+<?php
+session_start();
+ if (!isset($_SESSION['email'])){
+	header('Location:index.php');
+ }
+
+include_once 'inc/php/config.php';
+
+$user_id = mysql_query("SELECT user_id FROM user WHERE email = '" . $_SESSION['email'] . "'");
+echo $user_id;
+
+?>
+
 <meta charset="UTF-8">
 <title>MeetMag - Home</title>
 <meta name="description" content="">
