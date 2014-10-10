@@ -15,10 +15,11 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
     </head>
-    <?php
 
+<?php
 include_once 'inc/php/config.php';
 include_once 'inc/php/functions.php';
+include_once 'inc/php/db_functions.php';
 
 //setup some variables/arrays
 $action = array();
@@ -43,15 +44,28 @@ if(isset($_POST['signup'])){
 	//if(empty($password)){ $action['result'] = 'error'; array_push($text,'You forgot your password'); }
 	//if(empty($emailsignup)){ $action['result'] = 'error'; array_push($text,'You forgot your emailsignup'); }
 	
+	// ----- Validate input fields here -----
+
+	if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email - found in db_function.php
+		$action['result'] = 'error';
+		$text = "Email $emailsignup already exists!";
+	} elseif (!ctype_digit($phone_num) && strlen($phone_num) > 7) { // Check if it is all digits - found in functions.php
+		$action['result'] = 'error';
+		$text = "Invalid phone number!";
+	} elseif (strlen($password) < 6) { // Check if password is > 6 characters found in functions.php
+		$action['result'] = 'error';
+		$text = "Password must be atleast 6 characters long!";
+	}
+	
 	if($action['result'] != 'error'){
 
-		$password = md5($password);
+		//$password = md5($password);
 			
 		//add to the database
-		$add = mysql_query("INSERT INTO `user` (email, phone_num, password, first, last) VALUES('$emailsignup','$phone_num','$password','$firstnamesignup',$lastnamesignup)");
+		$add = mysql_query("INSERT INTO `user` (user_id, email, phone_num, password, first, last) VALUES(NULL, '$emailsignup','$phone_num','$password','$firstName','$lastName')");
 		
 		if($add){
-			
+			/*
 			//get the new user id
 			$userid = mysql_insert_id();
 			
@@ -77,7 +91,7 @@ if(isset($_POST['signup'])){
 				//send the emailsignup
 				if(send_emailsignup($info)){
 								
-					//emailsignup sent
+					//emailsignup sent`````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 					$action['result'] = 'success';
 					array_push($text,'Thanks for signing up. Please check your emailsignup for confirmation!');
 				
@@ -94,9 +108,10 @@ if(isset($_POST['signup'])){
 				array_push($text,'Confirm row was not added to the database. Reason: ' . mysql_error());
 				
 			}
+			*/
 		
 		// Redirect to homepage
-		header('Location:index.php');
+		header('Location:index.php#tologin');
 			
 		}else{
 		
@@ -106,9 +121,7 @@ if(isset($_POST['signup'])){
 		}
 	
 	}
-	
 	$action['text'] = $text;
-
 }
 
 ?>
@@ -165,7 +178,7 @@ if(isset($_POST['signup'])){
                                     <input id="emailsignup" name="emailsignup" required="required" type="emailsignup" placeholder="mysupermail@mail.com"/> 
                                 </p>
                                 <p> 
-                                    <label for="pnosignup" class="pno" data-icon="e" > Your phone number signup</label>
+                                    <label for="pnosignup" class="pno" data-icon="e" > Your phone number</label>
                                     <input id="pnosignup" name="pnosignup" required="required" type="pnosignup" placeholder="04xxxxxxxx"/> 
                                 </p>
                                 <p> 
