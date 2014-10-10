@@ -15,8 +15,29 @@ session_start();
 
 include_once 'inc/php/config.php';
 
-$user_id = mysql_query("SELECT user_id FROM user WHERE email = '" . $_SESSION['email'] . "'");
-echo $user_id;
+// Holds the amount of newsfeed items to show
+$newsfeed_limit = 10;
+
+
+$user_id_query = mysql_query("SELECT user_id FROM user WHERE email = '" . $_SESSION['email'] . "'");
+$user_id = mysql_result($user_id_query, 0);
+
+
+$meeting_name_array = array();
+$message_array = array();
+
+$attendance_query = mysql_query("SELECT meeting_id FROM attendance WHERE user_id = '" . $user_id . "'");
+while($attendance_row = mysql_fetch_array($attendance_query)) {
+	$meeting_name_query = mysql_query("SELECT meeting_name FROM meeting WHERE meeting_id = '" . $attendance_row['meeting_id'] . "'");
+	while ($meeting_row = mysql_fetch_array($meeting_name_query)) {
+		array_push($meeting_name_array, $meeting_row['meeting_name']);
+	}
+
+	$message_query = mysql_query("SELECT message FROM newsfeed WHERE meeting_id = '" . $attendance_row['meeting_id'] . "'");
+	while ($message_row = mysql_fetch_array($message_query)) {
+		array_push($message_array, $message_row['message']);
+	}
+}
 
 ?>
 
@@ -174,46 +195,23 @@ echo $user_id;
     
         <div id="wrapper" style="height:100%">
         
-           
         
             <ul id="vertical-ticker" style="overflow:auto; width:100%; height:100%">
-                <li>
-                <h4> Kahoon project</h4>
-                <p style="color:white; font-size:medium">Meeting on sunday at 5:15 am @ Fizzy's coffee </p>
-                <p style="color:#1ABC9C; font-size:medium">10:38 pm</p></a>
+				<?php
+					for ($i = 0; $i < count($meeting_name_array); $i++) {
+						if ($i = $newsfeed_limit) {
+							break;
+						}
+				?>
+				
+				<li>
+				<h4> <?php echo $meeting_name_array[$i]; ?> </h4>
+			    <p style="color:white; font-size:medium"> <?php echo $message_array[$i]; ?> </p>
                 </li>
-
-                <li>
-                    <h4>Jack in the Box Project</h4>
-                    <p style="color:white; font-size:medium">Aditya Rahardi rescheduled the meeting to monday @ 7 am </p>
-                    <p style="color:#1ABC9C; font-size:medium">11:22 am</p>
-                </li>
-                <li>
-                    <h4>Fizzy-flow project</h4>
-                    <p style="color:white; font-size:medium">Meeting was canceld by Gary</p>
-                    <p style="color:#1ABC9C; font-size:medium">8:55 am</p>
-                </li>
-                <li>
-                    <h4>Roland do tolt</h4>
-                    <p style="color:white; font-size:medium">invited you to the "loot brick" meeting on the 21st of june</p>
-                    <p style="color:#1ABC9C; font-size:medium">10:11 am</p>
-                </li>
-                <li>
-                    <h4>Aditya Rahardi</h4>
-                    <p style="color:white; font-size:medium">Has developed special powers of unknown sources</p>
-                    <p style="color:#1ABC9C; font-size:medium">10:11 am</p>
-                </li>
-                <li>
-                    <h4>Gary Foo</h4>
-                    <p style="color:white; font-size:medium">Has decided to change his name to Gray because he believes it is a cooler name then his own</p>
-                    <p style="color:#1ABC9C; font-size:medium">3:11 pm</p>
-                </li>
-                <li>
-                    <h4>Gary Foo</h4>
-                    <p style="color:white; font-size:medium">Has decided to change his name to Gray because he believes it is a cooler name then his own</p>
-                    <p style="color:#1ABC9C; font-size:medium">3:11 pm</p>
-                </li>
-            </ul>
+				<?php
+				}	
+				?>
+			</ul>
             
             <!--- <p><a href="#" id="ticker-previous">Previous</a> / <a href="#" id="ticker-next">Next</a> / <a id="stop" href="#">Stop</a> / <a id="start" href="#">Start</a></p>
             <p>Roll over the ticker to stop scrolling</p> -->
