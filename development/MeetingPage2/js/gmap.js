@@ -42,9 +42,10 @@
 
 $(document).ready(function() { 
 	$('#googlemap')
-	  .gmap3( { action:'init', options:{ center:[52.914856,-1.447152], zoom: 14, minZoom: 8, maxZoom: 18, mapTypeId: google.maps.MapTypeId.MAP, mapTypeControl: true, navigationControl: true, streetViewControl: true, scrollwheel: true } },
+	//-27.495275, 153.012427
+	  .gmap3( { action:'init', options:{ center:[-27.495275,153.012427], zoom: 14, minZoom: 8, maxZoom: 18, mapTypeId: google.maps.MapTypeId.MAP, mapTypeControl: true, navigationControl: true, streetViewControl: true, scrollwheel: true } },
 	  { action: 'addMarkers',
-		markers:[ {lat: 52.914856, lng: -1.447152, data:'Derby County Football Club' }],
+		markers:[ {lat: -27.495275, lng: 153.012427, data:'University of Queensland' }],
 		marker:{
 		  options: { draggable: false },
 		  events:{

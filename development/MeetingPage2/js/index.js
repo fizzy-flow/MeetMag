@@ -3,7 +3,7 @@ $.fn.csAccordion = function (args) {
             // hoverOver: false,
             customCSS: false,
             delay: 5000,
-            autoAnimate: true,
+            autoAnimate: false,
             accordionTitle: false,
             pauseOnHover: true,
             backgroundColour: false,
@@ -35,9 +35,9 @@ $.fn.csAccordion = function (args) {
 
       
 
-        if (args.accordionTitle) {
+/*        if (args.accordionTitle) {
             $(this).prepend('<div class="csAccordion__title">' + args.accordionTitle + '</div>');
-        }
+        }*/
 
         $(this).find('ul').wrap('<div class="wrapper"></div>');
 
@@ -78,12 +78,6 @@ $.fn.csAccordion = function (args) {
         
         if(args.backgroundColour){
          $(this).css('background', args.backgroundColour);
-        }
-        if(args.titleColour){
-            $(this).find('.csAccordion__title').css('background', args.titleColour);
-        }
-        if(args.titleTextColour){
-            $(this).find('.csAccordion__title').css('color', args.titleTextColour);
         }
         
 

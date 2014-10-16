@@ -196,6 +196,7 @@ html, body {
   background: #f7f9f7;
   overflow: hidden;
   position: relative;
+  margin-bottom: 100px;
 }
 
 /* line 11, ../sass/accordion/_base.scss */
@@ -203,6 +204,9 @@ html, body {
   color: #333333;
   text-decoration: none;
   cursor: pointer;
+  float: right;
+  font-size: 27px;
+  margin-right: 10px;
 }
 /* line 17, ../sass/accordion/_base.scss */
 .csAccordion ul, .csAccordion li {
@@ -369,6 +373,7 @@ html, body {
   margin: 0;
   font-size: 1.2em;
   line-height: 1.4em;
+  display: inline;
 }
 /* line 122, ../sass/accordion/_base.scss */
 .csAccordion p.h3 {
@@ -425,7 +430,6 @@ html, body {
 }
 /* line 143, ../sass/accordion/_base.scss */
 .csAccordion .expand {
-  background: url(http://www.markrosssmith.co.uk/showcase/creamsoda/jquery_accordion/img/accordion_arrow.png) no-repeat center;
   opacity: 100;
   width: 30px;
   height: 30px;
