@@ -154,7 +154,7 @@ input {
 #wrapper p.button input{
 	width: 30%;
 	cursor: pointer;	
-	background: rgb(61, 157, 179);
+	background: rgb(90, 201, 178);
 	padding: 8px 5px;
 	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
 	color: #fff;
@@ -232,7 +232,7 @@ p.change_link{
 	-webkit-border-radius: 0 0  5px 5px;
 	   -moz-border-radius: 0 0  5px 5px;
 	        border-radius: 0 0  5px 5px;
-	background: rgb(225, 234, 235);
+/*	background: rgb(225, 234, 235);
 	background: -moz-repeating-linear-gradient(-45deg, 
 	rgb(247, 247, 247) , 
 	rgb(247, 247, 247) 15px, 
@@ -260,7 +260,7 @@ p.change_link{
 	rgb(225, 234, 235) 15px, 
 	rgb(225, 234, 235) 30px, 
 	rgb(247, 247, 247) 30px
-	);
+	);*/
 }
 #wrapper p.change_link a {
 	display: inline-block;
