@@ -95,7 +95,7 @@ if(isset($_POST['signup'])){
                     <h2 style="text-align:center; margin-bottom: 2%;">Meeting <strong>- Management</strong>
                     </h2>
                 </div>
-            <div class="fullwidth" style="width:1970px;">
+            <div class="fullwidth">
 
                 <header>
                     <h1 style="color:#5ac9b2">Welcome to Meetmag!</span></h1>
