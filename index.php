@@ -72,8 +72,87 @@ if(isset($_POST['signup'])){
     
     // ----- Validate input fields here -----
 
-   
+    if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email - found in db_function.php
+        $action['result'] = 'error';
+        $text = "Email $emailsignup already exists!";
+    } elseif (!ctype_digit($phone_num) && strlen($phone_num) > 7) { // Check if it is all digits - found in functions.php
+        $action['result'] = 'error';
+        $text = "Invalid phone number!";
+    } elseif (strlen($password) < 6) { // Check if password is > 6 characters found in functions.php
+        $action['result'] = 'error';
+        $text = "Password must be atleast 6 characters long!";
+    }
+    
+    if($action['result'] != 'error'){
+
+        //$password = md5($password);
+            
+        //add to the database
+        $add = mysql_query("INSERT INTO `user` (user_id, email, phone_num, password, first, last) VALUES(NULL, '$emailsignup','$phone_num','$password','$firstName','$lastName')");
+        
+        if($add){
+            /*
+            //get the new user id
+            $userid = mysql_insert_id();
+            
+            //create a random key
+            $key = $firstName . $lastName . $emailsignup . date('mY');
+            $key = md5($key);
+            
+            //add confirm row
+            $confirm = mysql_query("INSERT INTO `confirm` VALUES(NULL,'$lastName','$key','$emailsignup')"); 
+            
+            if($confirm){
+            
+                //include the swift class
+                include_once 'inc/php/swift/swift_required.php';
+            
+                //put info into an array to send to the function
+                $info = array(
+                    'firstName' => $firstName,
+                    'lastName' => $lastName,
+                    'emailsignup' => $emailsignup,
+                    'key' => $key);
+            
+                //send the emailsignup
+                if(send_emailsignup($info)){
+                                
+                    //emailsignup sent`````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+                    $action['result'] = 'success';
+                    array_push($text,'Thanks for signing up. Please check your emailsignup for confirmation!');
+                
+                }else{
+                    
+                    $action['result'] = 'error';
+                    array_push($text,'Could not send confirm emailsignup');
+                
+                }
+            
+            }else{
+                
+                $action['result'] = 'error';
+                array_push($text,'Confirm row was not added to the database. Reason: ' . mysql_error());
+                
+            }
+            */
+        
+        // Redirect to homepage
+        header('Location:index.php#tologin');
+            
+        }else{
+        
+            $action['result'] = 'error';
+            array_push($text,'User could not be added to the database. Reason: ' . mysql_error());
+        
+        }
+    
+    }
+    $action['text'] = $text;
+}
+
+?>
 <?= show_errors($action); ?>
+
 
 <body>
 
