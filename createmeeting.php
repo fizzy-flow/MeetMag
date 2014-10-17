@@ -43,7 +43,9 @@
 <body id="top">
 
 
-
+<?php 
+	$project_id = $_GET['project'];
+?>
 
 
 <div id="container" class="clearfix">
@@ -75,10 +77,11 @@
 
 				</div>
                 <div class="main" ng-app="memberssss" style="width: 100%; max-width: 100%; padding: 0px 0; padding-bottom:5%;">
-                <form class="cbp-mc-form">
+                <form action="/inc/php/insert_meeting.php?project=<?php echo $project_id; ?>" method="POST" class="cbp-mc-form">
                     <div class="cbp-mc-column" ng-controller="numMembers">
-                        <label for="first_name">Project Title</label>
-                        <input type="text" id="project_title" name="project_title" placeholder="MeetMag Project"/>
+					
+						<!-- DISPLAY PROJECT TITLE HERE -->
+						
                         <label for="last_name">Name of Meeting</label>
                         <input type="text" id="meeting_name" name="meeting_name" placeholder="Star Wars Meeting"/>
                         <label for="last_name">Meeting Description</label>
@@ -127,9 +130,9 @@
                         <input type="date" id="phone" name="date">
                         <label>Duration</label>
                         <label>Start time</label>
-                        <input type="time" id="starttime">
+                        <input type="time" id="starttime" name="start_time">
                         <label>End time</label>
-                        <input type="time" id="endtime">
+                        <input type="time" id="endtime" name="end_time">
                     </div>
                     <div class="cbp-mc-column">
                         <label for="location">Location</label>
