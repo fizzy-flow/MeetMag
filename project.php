@@ -13,8 +13,31 @@ session_start();
 
 include_once 'inc/php/config.php';
 
-$results = mysql_query("SELECT * FROM project");
-$row_count = mysql_num_rows($results);
+// Get the user_id variable
+$user_id_query = mysql_query("SELECT user_id FROM user WHERE email = '" . $_SESSION['email'] . "'");
+$user_id = mysql_result($user_id_query, 0);
+
+// Get the project_id belonging to the logged in user_id
+$project_id_results = mysql_query("SELECT * FROM project_membership WHERE user_id = '" . $user_id . "'");
+$project_id_row_count = mysql_num_rows($results);	
+
+//Holds arrays to store the name and description
+$project_name_array = array();
+$project_description_array = array();
+$project_date_array = array();
+$project_id_array = array();
+
+while ($project_id_row = mysql_fetch_array($project_id_results)) {
+	$project_name_results = mysql_query("SELECT * FROM project WHERE project_id = '" . $project_id_row['project_id'] . "'");
+	while ($project_table_row = mysql_fetch_array($project_name_results)) {
+		array_push($project_name_array, $project_table_row['project_name']);
+		array_push($project_description_array, $project_table_row['description']);
+		array_push($project_date_array, $project_table_row['date_created']);
+		array_push($project_id_array, $project_table_row['project_id']);
+	}
+}
+
+$row_count = count($project_name_array);
 ?>
 
 <!-- Website Template designed by www.downloadwebsitetemplates.co.uk -->
@@ -177,24 +200,26 @@ $row_count = mysql_num_rows($results);
     padding: 20px; margin-left: 90px">Projects 
                         <span class="ui-li-count" style="
     float: right;
-    margin-right: 10%"><?php echo $row_count ?> </span>
+    margin-right: 10%"> <?php echo $row_count; ?> </span>
                     </li> 
 					<?php
-					while ($row_users = mysql_fetch_array($results)) {
-						$userNameQuery = mysql_query("SELECT * from user WHERE user_id = '" . $row_users['creator_id'] . "'");
-						$user = mysql_fetch_assoc($userNameQuery);
-						
-					?>
+					if ($row_count > 0) {
+						for ($i = 0; $i < count($project_name_array); $i++) {
+						?>
 
-					  <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;">   
-                      <h2><?php echo $row_users['project_name'] . " - " . $user['first']; ?></h2>
-                               <a href="inmeeting.html"> <img src="img/view.png" style="float:right;"> </a>
-                                
-                      <p class="ui-li-aside" style="text-align:center"><?php echo $row_users['description']; ?> </p>
-					  <p class="ui-li-aside" style="text-align:left;"> Date created: <?php echo $row_users['date_created']; ?> </p>
+						  <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;">   
+						  <h2><?php echo $project_name_array[$i]; ?></h2>
+								 <a href="meeting.php?project=<?php echo $project_id_array[$i]; ?>"> <img src="img/view.png" style="float:right;"> </a>
+									
+						  <p class="ui-li-aside" style="text-align:center"><?php echo $project_description_array[$i]; ?> </p>
+						  <p class="ui-li-aside" style="text-align:left;"> Date created: <?php echo $project_date_array[$i]; ?> </p>
 
-                    </li>
+						</li>
 					<?php
+						}
+					}
+					else {
+						echo '<p class="ui-li-aside" style="text-align:center"> You are not participating in any projects </p>';
 					}
 					?>
               </ul>

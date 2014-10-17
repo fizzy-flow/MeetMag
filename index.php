@@ -72,7 +72,7 @@ if(isset($_POST['signup'])){
     
     // ----- Validate input fields here -----
 
-   
+ ?>  
 <?= show_errors($action); ?>
 
 <body>
