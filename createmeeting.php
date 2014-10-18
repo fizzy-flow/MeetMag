@@ -97,31 +97,15 @@
                                 <option>Member 3</option>
                                 <option>Member 4</option>
                             </select>
-                            <label>Member 2</label>
-                            <select id="list_member" name="List Member">
-                                <option>Member 1</option>
-                                <option>Member 2</option>
-                                <option>Member 3</option>
-                                <option>Member 4</option>
-                            </select>
-                            <label>Member 3</label>
-                            <select id="list_member" name="List Member">
-                                <option>Member 1</option>
-                                <option>Member 2</option>
-                                <option>Member 3</option>
-                                <option>Member 4</option>
-                            </select>
                         </div>
                         <label for="agenda">Agenda Title</label>
-                        <input class="input" id="{{'agenda' + $index +'Agenda Title'}}" name="agendas" type="text" ng-repeat-start="agenda in agendas" placeholder="{{agenda.name + ', Importance: ' + agenda.importance}}"></input>
+                        <input class="input" id="{{'agenda' + $index +'Agenda Title'}}" name="agendas" type="text" ng-repeat-start="agenda in agendas" placeholder="Title of the agenda"></input>
                         <label for="agenda">Agenda Description</label>
-                        <input type="text" id="{{'agenda'+ $index +'Agenda Description'}}" value="Write a description here..."></input>
+                        <input type="text" id="{{'agenda'+ $index +'Agenda Description'}}" placeholder="Write a description here..."></input>
                         <label for="agenda">Estimation Time</label>
                         <table ng-repeat-end>
-                            <tr>
-                                <td>Hour(s): <input type="number" id="{{'agenda'+$index+'Hours'}}" min=0 max=59></td>
+                            <tr>              
                                 <td>Minute(s): <input type="number" id="{{'agenda'+$index+'Minutes'}}" min=0 max=59></td>
-                                <td>Second(s): <input type="number" id="{{'agenda'+$index+'Seconds'}}" min=0 max=59></td>
                             </tr>
                         </table>
                     </div>
@@ -137,8 +121,7 @@
                     <div class="cbp-mc-column">
                         <label for="location">Location</label>
                         <input type="text" id="location" name="location">
-                        <label for="tag">Tags</label>
-                        <textarea id="tag" name="tag"></textarea>
+          
                     </div>
                     <div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="Create meeting"/></div>
                 </form>

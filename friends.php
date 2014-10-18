@@ -44,8 +44,53 @@
         <link rel="stylesheet" type="text/css" href="css/tab-tabs.css" />
         <link rel="stylesheet" type="text/css" href="css/tab-tabstyles.css" />
         <script src="js/tab-modernizr.custom.js"></script>
+<?php
+	session_start();
+	 if (!isset($_SESSION['email'])){
+		header('Location:index.php');
+	 }
 
-    </head>
+	include_once 'inc/php/config.php';
+	include_once 'inc/php/db_functions.php';
+
+	$user_id = getUserID();
+
+	$friend_id = array();
+	$friend_name = array();
+	
+	// Get all friend_id's that belong to us
+	$friend_query = mysql_query("SELECT * from friend WHERE user_id = '" . $user_id . "'");
+	while($friend_row = mysql_fetch_array($friend_query)) {
+		array_push($friend_id, $friend_row['friend_id']);
+		// Get the friends names belonging to all those ids
+		$friend_name_query = mysql_query("SELECT * from user WHERE user_id = '" . $friend_row['friend_id'] . "'");
+		while($friend_name_row = mysql_fetch_array($friend_name_query)) {
+			$full_name = $friend_name_row['first'] . " " . $friend_name_row['last'];
+			array_push($friend_name, $full_name);
+		}
+	}
+	
+	// Get the groups that this user created
+	$group_id = array(); 
+	$group_name = array();
+	
+	echo "hi";
+	echo $user_id;
+	
+	$group_query = mysql_query("SELECT * from groups WHERE creator_id = '" . $user_id . "'");
+	if (!$group_query) {
+		die('Invalid' . mysql_error());
+	}
+	echo "SELECT * from group WHERE creator_id =";
+	while ($group_row = mysql_fetch_array($group_query)) {
+		echo "third";
+		array_push($group_id, $group_row['group_id']);
+		array_push($group_name, $group_row['group_name']);
+	}
+	
+?>
+		
+ </head>
 
 
 <!-- action menu (top Left) -->
@@ -176,47 +221,20 @@
                 <ul data-role="listview" data-inset="true">
 
                     <li data-role="list-divider" style=" color: #1ABC9C; font-size: x-large; padding: 20px; margin-left: 90px">Friends 
-                        <span class="ui-li-count" style="float: right; margin-right: 10%"> 6 </span>
+                        <span class="ui-li-count" style="float: right; margin-right: 10%"> <?php echo count($friend_id); ?> </span>
                     </li> 
 
+					<?php 
+						for ($i = 0; $i < count($friend_id); $i++) {					
+					?>
                     <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
 
-                      <h2>Faisal Al Siddiqi</h2>
-                      <p>Faisal wants to participate the meeting with the client</p></a>
+                      <h2> <?php echo $friend_name[$i]; ?> </h2>
                     </li> 
-
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Roland du Toit</h2>
-                      <p>Roland is negotiating with the client</p></a>
-                    </li>
-
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Gary Foo Ming Rui</h2>
-                      <p>Gary has decided to change his name into Gary because he felt it's a cool name </p></a>
-                    </li>
-
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#"> 
-
-                      <h2>Aditya Rahardi</h2>
-                      <p>Aditya has developed unknown super power</p></a>
-                    </li>
-
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Tengzheng Wang</h2>
-                      <p>Tengzheng hold a discussion group with the team </p></a>
-                    </li>
-
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Juntian Tao</h2>
-                      <p>Juntian writes a note</p></a>
-                    </li>
-
-                    
-              </ul>
+					<?php
+						}
+					?>
+				</ul>
           </section>
 
           <section id="Groups">
@@ -224,43 +242,20 @@
                 <ul data-role="listview" data-inset="true">
 
                     <li data-role="list-divider" style=" color: #1ABC9C; font-size: x-large; padding: 20px; margin-left: 90px">Groups 
-                        <span class="ui-li-count" style="float: right; margin-right: 10%"> 5 </span>
+                        <span class="ui-li-count" style="float: right; margin-right: 10%"> <?php echo count($group_id); ?> </span>
                     </li> 
 
+                   	<?php 
+						for ($i = 0;  $i < count($group_id); $i++) {
+					?>
+					<li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
 
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Group 1</h2>
-                      <p>Faisal wants to participate the meeting with the client</p></a>
+                      <h2> <?php echo $group_name[$i]; ?> </h2>
+			
                     </li> 
-
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Group 2</h2>
-                      <p>Roland is negotiating with the client</p></a>
-                    </li>
-
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Group 3</h2>
-                      <p>Gary has decided to change his name into Gary because he felt it's a cool name </p></a>
-                    </li>
-
-                     <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Group 4</h2>
-                      <p>Gary has decided to change his name into Gary because he felt it's a cool name </p></a>
-                    </li>
-
-                    <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;" data-icon=""><a href="#">  
-
-                      <h2>Group 5</h2>
-                      <p>Gary has decided to change his name into Gary because he felt it's a cool name </p></a>
-                    </li>
-
-
-
-                    
+					<?php 
+						}
+					?>
               </ul>
 
           </section>
