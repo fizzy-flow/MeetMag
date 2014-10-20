@@ -10,57 +10,11 @@ html, body {
   font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;
 }
 
-/**
- * Checkbox Four
- */
-.checkboxFour {
-  width: 40px;
-  height: 40px;
-  background: #ddd;
-  float: right;
-  display: inline;
-  margin-right: 10px;
-
-  border-radius: 100%;
-  position: relative;
-  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-}
-/**
- * Create the checkbox button
- */
-.checkboxFour label {
-  display: block;
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
-
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  -ms-transition: all .5s ease;
-  transition: all .5s ease;
-  cursor: pointer;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 1;
-
-  background: #333;
-
-  -webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
-  -moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
-  box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
-}
-.checkboxFour input{
-  visibility: hidden;
-}
-/**
- * Create the checked state
- */
-.checkboxFour input[type=checkbox]:checked + label {
-  background: #5ac9b2;
+/* line 20, ../sass/base.scss */
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 0;
+  color: #3a3a3a;
 }
 
 /* line 26, ../sass/base.scss */
@@ -420,7 +374,6 @@ html, body {
   margin-top: 0.5em;
   font-size: 1.3em;
   color: #333333;
-  display: inline;
 }
 @media (min-width: 720px) {
   /* line 122, ../sass/accordion/_base.scss */
@@ -470,6 +423,7 @@ html, body {
 }
 /* line 143, ../sass/accordion/_base.scss */
 .csAccordion .expand {
+  background: url(http://www.markrosssmith.co.uk/showcase/creamsoda/jquery_accordion/img/accordion_arrow.png) no-repeat center;
   opacity: 100;
   width: 30px;
   height: 30px;

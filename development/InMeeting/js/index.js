@@ -3,7 +3,7 @@ $.fn.csAccordion = function (args) {
             // hoverOver: false,
             customCSS: false,
             delay: 5000,
-            autoAnimate: false,
+            autoAnimate: true,
             accordionTitle: false,
             pauseOnHover: true,
             backgroundColour: false,
@@ -44,7 +44,7 @@ $.fn.csAccordion = function (args) {
        
 
 
-            var count=1;
+      
             $(this).find('li').each(function () {
                 var content = $(this).html();
 
@@ -52,14 +52,14 @@ $.fn.csAccordion = function (args) {
                     $(this).addClass('featured');
                 }
 
+
                 var html = '';
                     html += '<div class="col heading">';
                 if ($(this).data('title')) {
-                    html += '<p class="h3">' + $(this).data('title') + '</p>' + '<div class="checkboxFour"><input type="checkbox" value="1" id="checkboxFourInput'+(count)+'" name="" /><label for="checkboxFourInput'+(count)+'"></label></div>';
+                    html += '<p class="h3">' + $(this).data('title') + '</p><div class="expand"></div>';
                 }
 
                     html += '</div><div class="col content"><div class="inner_content">' + content + '</div>';
-                    count++;
 
               
 

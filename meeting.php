@@ -65,6 +65,8 @@ $project_description = "";
 $current_meeting_names = array();
 $current_meeting_description = array();
 $current_meeting_id = array();
+$current_meeting_location = array();
+$current_meeting_datetime = array();
 
 $past_meeting_names = array();
 $past_meeting_description = array();
@@ -87,6 +89,8 @@ while($project_contains_meeting_row = mysql_fetch_array($project_contains_meetin
 			array_push($current_meeting_names, $meeting_query_row['meeting_name']);
 			array_push($current_meeting_description, $meeting_query_row['description']);
 			array_push($current_meeting_id, $meeting_query_row['meeting_id']);
+            array_push($current_meeting_location, $meeting_query_row['location']);
+            array_push($current_meeting_datetime, $meeting_query_row['expect_start']);
 		} else {										 // Past meetings
 			array_push($past_meeting_names, $meeting_query_row['meeting_name']);
 			array_push($past_meeting_description, $meeting_query_row['description']);
@@ -187,12 +191,12 @@ while($project_contains_meeting_row = mysql_fetch_array($project_contains_meetin
 					<?php
 					for ($i = 0; $i < count($current_meeting_names); $i++) {
 					?>
-						<li data-title=" <?php echo $current_meeting_names[$i]; ?>" data-featured="true" class="">     
+                    <li data-title=" <?php echo $current_meeting_names[$i]; ?>" data-subtitle="<?php echo $current_meeting_location[$i]; ?>, <?php echo $current_meeting_datetime[$i]; ?>" data-featured="true" class="">
 							<p> <?php echo $current_meeting_description[$i]; ?> </p>
 							<a href=""><span class="icon-play"></span></a>
 							<a href=""><span class="icon-cog"></span></a>
-							<a href=""><span class="icon-cross"></span></a>		
-						</li>
+							<a href=""><span class="icon-cross"></span></a>
+					</li>
 					<?php
 						}
 					?>

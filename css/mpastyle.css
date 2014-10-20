@@ -350,6 +350,7 @@ html, body {
 }
 /* line 97, ../sass/accordion/_base.scss */
 .csAccordion li > .col.content {
+  color: black;
   height: 0;
   overflow: hidden;
   opacity: 0;
@@ -381,6 +382,13 @@ html, body {
   margin-top: 0.5em;
   font-size: 1.5em;
   color: #333333;
+}
+
+.csAccordion p.h4 {
+
+  color: #333333;
+  font-size: 1.5em;
+  float: right;
 }
 @media (min-width: 720px) {
   /* line 122, ../sass/accordion/_base.scss */
