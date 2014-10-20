@@ -36,6 +36,7 @@
         <link rel="stylesheet" type="text/css" href="css/createmeeting-component.css" />
         <script src="js/createmeeting-modernizr.custom.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+		<script src="jquery-1.11.1.min.js"></script>
         <script src="js/createmeeting-blah.js"></script>
         <script src="js/createmeeting-time.js"></script>
         <script src="js/createmeeting-agendadesc.js"></script>
@@ -44,7 +45,40 @@
 
 
 <?php 
+	session_start();
+	 if (!isset($_SESSION['email'])){
+		header('Location:index.php');
+	 }
+	include_once 'inc/php/config.php';
+	
 	$project_id = $_GET['project'];
+	$meeting_id = $_GET['meeting_id'];
+	
+	$meeting_name = "";
+	$meeting_description = "";
+	$meeting_location = "";
+	$meeting_start_time = "";
+	$meeting_end_time = "";
+	$meeting_date = "";
+	
+	if (isset($_GET['meeting_id'])) {
+		//Get name
+		// Get description
+		// Get date
+		// Get start time
+		// Get end time
+		// Get location
+		$meeting_query = mysql_query("SELECT * from meeting WHERE meeting_id = '" . $meeting_id . "'");
+		while ($meeting_row = mysql_fetch_array($meeting_query)) {
+			$meeting_name = $meeting_row['meeting_name'];
+			$meeting_description = $meeting_row['description'];
+			$meeting_location = $meeting_row['location'];
+			$meeting_start_time = $meeting_row['expect_start'];
+			$meeting_end_time = $meeting_row['expect_end'];
+			$meeting_date = $meeting_row['date'];
+		}
+		
+	}
 ?>
 
 
@@ -83,11 +117,11 @@
 						<!-- DISPLAY PROJECT TITLE HERE -->
 						
                         <label for="last_name">Name of Meeting</label>
-                        <input type="text" id="meeting_name" name="meeting_name" placeholder="Star Wars Meeting"/>
+                        <input type="text" id="meeting_name" name="meeting_name" />
                         <label for="last_name">Meeting Description</label>
-                        <input type="text" id="meeting_description" name="meeting_description" placeholder="Write description here..."/>
+                        <input type="text" id="meeting_description" name="meeting_description" />
                         <label for="email">Enter number of members</label>
-                        <input type="text" id="member" name="member" placeholder="Enter number of members"></input>
+                        <input type="text" id="member" name="member"></input>
                         <div>
                             <label for="list_member">List Member</label>
                             <label>Member 1</label>
@@ -99,9 +133,9 @@
                             </select>
                         </div>
                         <label for="agenda">Agenda Title</label>
-                        <input class="input" id="{{'agenda' + $index +'Agenda Title'}}" name="agendas" type="text" ng-repeat-start="agenda in agendas" placeholder="Title of the agenda"></input>
+                        <input class="input" id="{{'agenda' + $index +'Agenda Title'}}" name="agendas" type="text" ng-repeat-start="agenda in agendas"></input>
                         <label for="agenda">Agenda Description</label>
-                        <input type="text" id="{{'agenda'+ $index +'Agenda Description'}}" placeholder="Write a description here..."></input>
+                        <input type="text" id="{{'agenda'+ $index +'Agenda Description'}}" ></input>
                         <label for="agenda">Estimation Time</label>
                         <table ng-repeat-end>
                             <tr>              
@@ -123,18 +157,33 @@
                         <input type="text" id="location" name="location">
           
                     </div>
-                    <div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="Create meeting"/></div>
+                    <div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" id="createbutton" type="submit" value="Create meeting"/></div>
                 </form>
             </div>
             </div>
-
         </div>
-
-
     </div>
-    
+ </div>
+ 
+ <script type="text/javascript">
+	function populateFields() {
+		$('#meeting_name').val("<?php echo $meeting_name; ?>");
+		$('#meeting_description').val("<?php echo $meeting_description; ?>");
+		$('#phone').val("<?php echo $meeting_date; ?>");
+		$('#starttime').val("<?php echo $meeting_start_time; ?>");
+		$('#endtime').val("<?php echo $meeting_end_time; ?>");
+		$('#location').val("<?php echo $meeting_location; ?>");
+		$('#createbutton').val("Edit Meeting");
+	}
+ </script>
+ 
+ <?php 
+	if (isset($_GET['meeting_id'])) {
+		echo '<script type="text/javascript"> populateFields(); </script>';
+	}
+ ?>
+ 
 
-</div>
 
 
 </body>

@@ -193,9 +193,9 @@ while($project_contains_meeting_row = mysql_fetch_array($project_contains_meetin
 					?>
                     <li data-title=" <?php echo $current_meeting_names[$i]; ?>" data-subtitle="<?php echo $current_meeting_location[$i]; ?>, <?php echo $current_meeting_datetime[$i]; ?>" data-featured="true" class="">
 							<p> <?php echo $current_meeting_description[$i]; ?> </p>
-							<a href=""><span class="icon-play"></span></a>
-							<a href=""><span class="icon-cog"></span></a>
-							<a href=""><span class="icon-cross"></span></a>
+							<a href="#"><span class="icon-play"></span></a>
+							<a href=<?php echo "http://deco3801-12.uqcloud.net/createmeeting.php?meeting_id=" . $current_meeting_id[$i] . "&project_id=" . $project_id ?> ><span class="icon-cog"></span></a>
+							<a onclick='<?php echo "confirmDelete(" . $current_meeting_id[$i] . "," . $project_id . ")"; ?>' href="#"><span class="icon-cross"></span></a>
 					</li>
 					<?php
 						}
@@ -260,5 +260,15 @@ while($project_contains_meeting_row = mysql_fetch_array($project_contains_meetin
 
             })();
         </script>
+		
+		<script>
+			function confirmDelete(meeting_id, project_id) {
+				if (confirm("Delete meeting?") == true) {
+					// Delete goes here
+					window.location.href = "http://deco3801-12.uqcloud.net/inc/php/delete_meeting.php?meeting_id=" + meeting_id  + "&project_id=" + project_id;
+				} 
+			}
+	
+		</script>
 </body>
 </html>
