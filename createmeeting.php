@@ -16,17 +16,13 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
 <link rel="shortcut icon" href="images/meetmagicon/meetmagicon-32(2).png">
-
 <link rel="stylesheet" href="css/astyle.css" media="screen" type="text/css" />
 <!--[if IE]><![endif]-->
 <link rel="stylesheet" href="css/gravity-style.css">
 <script src="js/jquery.min.js"></script>
-<script src="js/index.js"></script>
-<script src="js/waypoints.min.js"></script>
 
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script src="js/gmap.js"></script>
-<script src="js/scripts.js"></script>
+<!--ATTENTION ROLAND : THIS IS THE JAVASCRIPT FOR DYNAMIC BUTTONS-->
+<script src="js/createMeeting.js"></script>
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 
@@ -34,8 +30,8 @@
 <!-- create meeting -->
         <link rel="stylesheet" type="text/css" href="css/createmeeting-default.css" />
         <link rel="stylesheet" type="text/css" href="css/createmeeting-component.css" />
+        <link rel="stylesheet" href="feather-webfont/feather.css">
         <script src="js/createmeeting-modernizr.custom.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 		<script src="jquery-1.11.1.min.js"></script>
         <script src="js/createmeeting-blah.js"></script>
         <script src="js/createmeeting-time.js"></script>
@@ -120,22 +116,17 @@
                         <input type="text" id="meeting_name" name="meeting_name" />
                         <label for="last_name">Meeting Description</label>
                         <input type="text" id="meeting_description" name="meeting_description" />
-                        <label for="email">Enter number of members</label>
-                        <input type="text" id="member" name="member"></input>
-                        <div>
-                            <label for="list_member">List Member</label>
-                            <label>Member 1</label>
-                            <select id="list_member" name="List Member">
-                                <option>Member 1</option>
-                                <option>Member 2</option>
-                                <option>Member 3</option>
-                                <option>Member 4</option>
-                            </select>
+                        <div id="membersDiv">
+                        <label for="member1">Members <a id="addMember"><span class="icon-plus"></span></a></label>
+                        <input type="text" id="member1" name="member1" placeholder="Member 1"/>
                         </div>
-                        <label for="agenda">Agenda Title</label>
-                        <input class="input" id="{{'agenda' + $index +'Agenda Title'}}" name="agendas" type="text" ng-repeat-start="agenda in agendas"></input>
-                        <label for="agenda">Agenda Description</label>
-                        <input type="text" id="{{'agenda'+ $index +'Agenda Description'}}" ></input>
+                        <div id="agendasDiv">
+                        <label> Agendas<a id="addAgendaSec"><span class="icon-plus"></span></a></label>
+                        <label for="agendas1"></label>
+                        <input class="input" type="text" placeholder="Agenda Title"></input>
+                        <input type="text" placeholder="Agenda Description" ></input>
+                        </label>
+                        </div>
                         <label for="agenda">Estimation Time</label>
                         <table ng-repeat-end>
                             <tr>              

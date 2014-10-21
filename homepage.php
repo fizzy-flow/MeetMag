@@ -198,8 +198,8 @@ while($attendance_row = mysql_fetch_array($attendance_query)) {
         
             <ul id="vertical-ticker" style="overflow:auto; width:100%; height:100%">
 				<?php
-					for ($i = 0; $i < count($meeting_name_array); $i++) {
-						if ($i = $newsfeed_limit) {
+					for ($i = 0; $i < count($message_array); $i++) {
+						if ($i == $newsfeed_limit) {
 							break;
 						}
 				?>

@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
@@ -33,18 +33,69 @@
 		
 <?php
 	session_start();
-	include_once "/inc/php/db_functions.php";
 	
-	$user_id = getUserID();
-	
+	include_once 'inc/php/config.php';
+	include_once 'inc/php/db_functions.php';
 	
 	//Check if user is logged in
 	 if (!isset($_SESSION['email'])){
 		header('Locaton:index.php');
 	 }
-	 
-	 
+	
+	// Get the user ID
+	$user_id = getUserID();
+	
+	// Get the meeting ID
+	$meeting_id = $_GET['meeting_id'];
+	
+	//Get the project ID
+	$project_id = $_GET['project'];
+	
+	// Get the creator ID
+	$meeting_query = mysql_query("SELECT * FROM meeting WHERE meeting_id = '" . $meeting_id . "'");
+	$num_rows = mysql_num_rows($meeting_query);
+	
+	// Meeting does not exist
+	if ($num_rows < 1) {	
+		header('Location:homepage.php');
+	}
+	
+	// Set up variables
+	$description = "";
+	$meeting_name = "";
+	$date = "";
+	$start = "";
+	$end = "";
+	$location = "";
+	$project_name = "";
+	$duration = ""; // The difference between start and end
+	$hours = "";
+	$mins = "";
+	$seconds = 0;
+	
+	$project_query = mysql_query("SELECT project_name FROM project WHERE project_id = '" . $project_id . "'");
+	$project_name = mysql_result($project_query, 0);
+	
+	// Insert variables
+	while ($meeting_row = mysql_fetch_array($meeting_query)) {
+		$description = $meeting_row['description'];
+		$meeting_name = $meeting_row['meeting_name'];
+		$date = $meeting_row['date'];
+		$start = $meeting_row['expect_start'];
+		$end = $meeting_row['expect_end'];
+		$location = $meeting_row['location'];
+	}
+	
+	// Calculate duration
+	$to_time = strtotime($end);
+	$from_time = strtotime($start);
+	$duration = round(abs($to_time - $from_time) / 60,2);
+	
+	$hours = abs($duration / 60);
+	$mins = abs($duration % 60);
+
 ?>
+		
 </head>
 
 <body id="top">
@@ -63,18 +114,18 @@
                                                 </li>
                                             <!-- <li><a class="gn-icon gn-icon-cog">Home</a></li> (just incase)--> 
                                                 <li>
-                                                    <a href= "homepage.html"> <img src="img/homeicon.png"/>Home</a>
+                                                    <a href= "homepage.php"> <img src="img/homeicon.png"/>Home</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href= "project.html"> <img src="img/projectsicon.png"/>Projects</a>
+                                                    <a href= "project.php"> <img src="img/projectsicon.png"/>Projects</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="friends.html"> <img src="img/friendsicon.png"/>Friends</a>
+                                                    <a href="friends.php"> <img src="img/friendsicon.png"/>Friends</a>
                                                 </li>
 
-                                                <li><a href"settings.html" class="gn-icon gn-icon-cog">Settings</a>
+                                                <li><a href="settings.php" class="gn-icon gn-icon-cog">Settings</a>
                                                 </li>
 
                                                 <li>
@@ -106,25 +157,15 @@
 
 				<div class="overlaycontent">
 
-					<h1><a title="" href="#"><strong>Meeting 1</strong></a></h1>
-                    <h2><strong>Project 1</strong></h2>
-
-
-
+					<h1><a title="" href="#"><strong> <?php echo $meeting_name; ?></strong></a></h1>
+                    <h2><strong><?php echo $project_name; ?> </strong></h2>
 				</div>
-
-
-
-
-
             <div class="fullwidth">
                 <div class="main">
 
 
                 	<!-- Countdown Timer -->
                     <div id="countdowncont" class="clearfix">
-
-
                         <ul id="countdown">
                             <li>
                                 <span class="hours">00</span>
@@ -142,7 +183,7 @@
                     </div>
 					<hr />
 					<!-- Percentage Bar -->
-                    <h3>Meeting 1<strong>  Progress</strong></h3>
+                    <h3><strong>  Progress</strong></h3>
 					<div class="percentagebar clearfix">
 						<ul>
 							<li><div class="expand percent80"></div></li>
@@ -150,11 +191,11 @@
 					</div>
                 	<hr />
                     <!-- Meeting Description Section -->
-                    <h2>Meeting 1<strong> Description</strong></h2>
-                    <p><strong>Lorem ipsum dolor</strong> sit amet, consectetur adipiscing elit. Aliquam a nisl imperdiet nibh molestie malesuada. Suspendisse potenti. Sed blandit dapibus commodo. Maecenas vel facilisis libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas consequat enim sit amet nunc sodales volutpat. Nullam blandit dolor vitae tristique consequat. Quisque volutpat vestibulum odio id elementum. Praesent adipiscing id nibh in sodales. Maecenas lectus metus, ullamcorper nec porta ut, sollicitudin non neque. Nullam non diam nisl. Donec blandit dictum massa at bibendum.</p>
+                    <h2><strong> Description</strong></h2>
+                    <p> <?php echo $description; ?> <p>
                     <hr />
                     <!-- Memeber Section -->
-                    <h2>Meeting 1<strong> Members</strong></h2>
+                    <h2><strong> Members</strong></h2>
                     <ol class="rectangle-list">
                     <li><a href="">Member #1</a></li>
                     <li><a href="">Member #2</a></li>
@@ -163,7 +204,7 @@
                     <li><a href="">Member #5</a></li>                       
                     </ol>
                     <hr/>
-                    <h2>Meeting 1<strong> Questions</strong></h2>
+                    <h2><strong> Questions</strong></h2>
                     <!-- Voting Section -->
                     <span id="question">What is your favorite server side language?</span>
                     <div id="voting">
@@ -215,7 +256,7 @@
 					<h3>Get <strong>Directions</strong></h3>
 					<form action="http://maps.google.com/maps" id="getdirections" class="clearfix" method="get" target="_blank">
 						<div class="directionleft">
-							<input type="text" name="saddr" id="postcodebox" placeholder="Postcode ..." />
+							<input type="text" name="saddr" id="postcodebox" value="<?php echo $location; ?>" />
 							<input type="hidden" name="daddr" value="-27.495275, 153.012427" />
 						</div>
 						<div class="directionright">
@@ -248,10 +289,5 @@
         <script>
             new gnMenu( document.getElementById( 'gn-menu' ) );
         </script>
-
-
-
-
-
 </body>
 </html>

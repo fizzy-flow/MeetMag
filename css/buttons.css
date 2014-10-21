@@ -37,6 +37,7 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner
 .btnstyle
 {
 	background: #1ABC9C;
+	/*background-color:white;*/
 	color: #FFF;
 	padding: 9px 0;
 	width: 100%;
