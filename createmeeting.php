@@ -118,13 +118,13 @@
                         <input type="text" id="meeting_description" name="meeting_description" />
                         <div id="membersDiv">
                         <label for="member1">Members <a id="addMember"><span class="icon-plus"></span></a></label>
-                        <input type="text" id="member1" name="member1" placeholder="Member 1"/>
+                        <input type="text" id="member1" name="member[member1]" placeholder="Member 1"/>
                         </div>
                         <div id="agendasDiv">
                         <label> Agendas<a id="addAgendaSec"><span class="icon-plus"></span></a></label>
                         <label for="agendas1"></label>
-                        <input class="input" type="text" placeholder="Agenda Title"></input>
-                        <input type="text" placeholder="Agenda Description" ></input>
+                        <input type="text" placeholder="Agenda Title" name="agendaTitle[agendaTitle1]"></input>
+                        <input type="text" placeholder="Agenda Description" name="agendaDesc[agendaDesc1]"></input>
                         </label>
                         </div>
                         <label for="agenda">Estimation Time</label>

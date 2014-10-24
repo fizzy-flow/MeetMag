@@ -91,14 +91,14 @@ else if(array_key_exists('vcard',$_GET)){
         <script src="js/modernizr.custom.js"></script>
 <!-- create project pop up -->
 
-
-
     <!-- Demo Styles -->
     <link href="css/popup-demo.css" rel="stylesheet">
 
     <!-- Modal Styles -->
     <link href="css/popup-friends-modal.css" rel="stylesheet">
 
+<!-- from the meeting page -->
+<link rel="stylesheet" href="feather-webfont/feather.css">
 
 
     
@@ -107,16 +107,16 @@ else if(array_key_exists('vcard',$_GET)){
         <div class="modal-content">
 
             <div class="header">
-                <h2 style="color:#222;">Create Project</h2>
+                <h1 class="v-card"><?php echo $profile->fullName()?> <p style=" float:right; color:White;"><a href="#" style="color:White;">CLOSE</a></p></h1> 
             </div>
 
  <section id="infoPage">
     
             <p>
-                <img src="<?php echo $profile->photoURL()?>" alt="<?php echo $profile->fullName()?>" width="164" height="164" />
+                <img src="<?php echo $profile->photoURL()?>" alt="<?php echo $profile->fullName()?>" width="164" height="164" style="margin-top:20px;" />
             </p>
             <header>
-                <h1><?php echo $profile->fullName()?></h1>
+                <h1 class="v-card"><?php echo $profile->fullName()?></h1>
                 <h2><?php echo $profile->tags()?></h2>
             </header>
             
@@ -137,17 +137,18 @@ else if(array_key_exists('vcard',$_GET)){
                 <li><a class="url" href="<?php echo $profile->website()?>"><?php echo $profile->website()?></a></li>
             </ul>
             
-        </section>
-        
-        <section id="links">
-            <a href="?vcard" class="vcard">Download as V-Card</a>
-            <a href="?json" class="json">Get as a JSON feed</a>
-        </section>
+    </section>
+    
+    <section id="links">
+        <a href="?vcard" class="vcard">Download as V-Card</a>
+        <a href="?json" class="json">Get as a JSON feed</a>
+    </section>
         
 
-        </div>
-        
     </div>
+        
+</div>
+
 
     
  <ul id="gn-menu" class="gn-menu-main" style="z-index:2">

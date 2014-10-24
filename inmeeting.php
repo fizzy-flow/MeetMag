@@ -21,6 +21,8 @@
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="js/gmap.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/createPoll.js"></script>
+<link rel="stylesheet" href="feather-webfont/feather.css">
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!-- /nev -->
         <meta name="author" content="Codrops" />
@@ -186,9 +188,10 @@
                     <h3><strong>  Progress</strong></h3>
 					<div class="percentagebar clearfix">
 						<ul>
-							<li><div class="expand percent80"></div></li>
+							<li><div class="expand percent"></div></li>
 						</ul>
 					</div>
+                    <input id="endMeeting" type="submit" value="End Meeting"></input>
                 	<hr />
                     <!-- Meeting Description Section -->
                     <h2><strong> Description</strong></h2>
@@ -206,7 +209,12 @@
                     <hr/>
                     <h2><strong> Questions</strong></h2>
                     <!-- Voting Section -->
-                    <span id="question">What is your favorite server side language?</span>
+                    <div id="createPoll">
+                        <h2><a id="addPollDiv">Add new poll</a></h2>
+                    </div>
+                    <div id="pollResultsDiv">
+                    </div>
+                    <h2>What is your favorite server side language?</h2>
                     <div id="voting">
                         
                         <div><span>0</span><a href="">Vote</a>PHP</div>
@@ -253,16 +261,6 @@
 					<div class="goomap">
 						<div id="googlemap" class="gmap3"></div>
 					</div>
-					<h3>Get <strong>Directions</strong></h3>
-					<form action="http://maps.google.com/maps" id="getdirections" class="clearfix" method="get" target="_blank">
-						<div class="directionleft">
-							<input type="text" name="saddr" id="postcodebox" value="<?php echo $location; ?>" />
-							<input type="hidden" name="daddr" value="-27.495275, 153.012427" />
-						</div>
-						<div class="directionright">
-							<button type="submit" class="btn btnstyle btn-5a icon-arrow-right"><span>Get Directions</span></button>
-					  </div>
-					</form>
 				</div>
             </div>
         </div>

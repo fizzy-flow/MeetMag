@@ -47,3 +47,57 @@ hr {
 	float: left;
 	clear:both;
 }
+
+.project-list{
+	padding-left:2%; 
+	padding-right:2%; 
+	margin-top:5px; 
+	margin-top:5px;
+	/* border: solid;*/
+	border-bottom: solid;
+	border-bottom-color: #1ABC9C;
+	border-top: solid;
+	border-top-color: #1ABC9C;
+	padding-top: 2%;
+}
+
+.view-img img{
+	display: inline;
+	float: right;
+	margin-bottom:3px;
+
+}
+
+.view-img{
+	text-align:left; 
+	padding-bottom: 1%;
+}
+.list-title-friend-group{
+	color: #1ABC9C; 
+	font-size: x-large; 
+	padding: 20px;
+}
+.list-a-tag-friends{
+	height:50px; 
+	width:90%;
+}
+.logo-header{
+	text-align:center
+}
+
+.popup-form{
+	font-weight:bold; 
+	font-size:medium;
+}
+
+.list-count-right-side{
+	float: right; 
+	margin-right: 4%;
+}
+
+.list-title-left-side{
+	color:#1ABC9C; 
+	font-size: x-large; 
+	adding: 20px; 
+	margin-left: 4%;
+}

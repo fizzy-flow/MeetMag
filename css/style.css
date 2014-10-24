@@ -34,11 +34,11 @@ a.hiddenanchor{
 }
 /** The wrapper that will contain our two forms **/
 #wrapper{
-	width: 60%;
+	/*width: 60%;*/
 	right: 0px;
 	min-height: 560px;	
 	margin: 0px auto;	
-	width: 500px;
+	max-width: 500px;
 	position: relative;	
 }
 /**** Styling the form elements **/
@@ -224,7 +224,8 @@ p.change_link{
 	color: rgb(127, 124, 124);
 	left: 0px;
 	height: 20px;
-	width: 440px;
+	/*width: 440px;*/
+	width: auto;
 	padding: 17px 30px 20px 30px;
 	font-size: 16px	;
 	text-align: right;
@@ -294,7 +295,7 @@ p.change_link{
 #login{
 	position: absolute;
 	top: 0px;
-	width: 88%;	
+	width: 100%;	
 	padding: 18px 6% 60px 6%;
 	margin: 0 0 35px 0;
 	background: rgb(247, 247, 247);

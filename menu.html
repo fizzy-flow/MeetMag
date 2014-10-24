@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+
+<!-- /nev -->
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/google-normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/google-style.css" />
+		<link rel="stylesheet" type="text/css" href="css/google-component.css" />
+		<link rel="stylesheet" type="text/css" href="css/vertical-ticker-style.css"/>
+
+		
+		<link rel="stylesheet" type="text/css" href="css/menustyle.css" />
+
+		<script src="js/google-modernizr.custom.js"></script>
+
+<!--vertical-ticker -->
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.totemticker.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#vertical-ticker').totemticker({
+				row_height	:	'100px',
+				next		:	'#ticker-next',
+				previous	:	'#ticker-previous',
+				stop		:	'#stop',
+				start		:	'#start',
+				mousestop	:	true,
+			});
+		});
+	</script>
+
+
+
+	</head>
+	<body>
+		<div class="container" style="background: url(/img/originals/bg.png)">
+
+<!-- /nev -->	
+		<div class="navigation">
+			<ul id="gn-menu" class="gn-menu-main">
+
+					<li class="gn-trigger">
+							<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+
+								<nav class="gn-menu-wrapper">
+										<div class="gn-scroller">
+											<ul class="gn-menu">
+												
+												<li class="gn-search-item">
+													<input placeholder="Search" type="search" class="gn-search">
+													<a class="gn-icon gn-icon-search"><span>Search</span></a>
+												</li>
+											<!-- <li><a class="gn-icon gn-icon-cog">Home</a></li> (just incase)--> 
+												<li>
+													<a>
+														<img src="img/homeicon.png"/>Home</a>
+												</li>
+												<li>
+													<a><img src="img/projectsicon.png"/>Projects</a>
+												</li>
+												<li>
+													<a><img src="img/friendsicon.png"/>Friends</a>
+												</li>
+
+																							
+
+
+												<li><a class="gn-icon gn-icon-cog">Settings</a></li>
+
+											</ul>
+										</div><!-- /gn-scroller -->
+								</nav>
+
+
+					</li>
+
+			</ul>
+		</div>
+
+
+
+
+
+	
+<!-- news Feed -->
+	
+		<div id="wrapper">
+		
+			<h1 class="logo"> <img class="logo" src="img/originals/nav-logo.png"></h1>
+		
+			<ul id="vertical-ticker">
+				<li>
+				<h4> Kahoon project</h4>
+                <p style="color:black; font-size:medium">Meeting on sunday at 5:15 am @ Fizzy's coffee </p>
+                <p style="color:black; font-size:medium">10:38 pm</p></a>
+				</li>
+
+				<li>
+					<h4>Jack in the Box Project</h4>
+			        <p style="color:black; font-size:medium">Aditya Rahardi rescheduled the meeting to monday @ 7 am </p>
+			        <p style="color:black; font-size:medium">11:22 am</p>
+			    </li>
+				<li>
+					<h4>Fizzy-flow project</h4>
+			        <p style="color:black; font-size:medium">Meeting was canceld by Gary</p>
+			        <p style="color:black; font-size:medium">8:55 am</p>
+				</li>
+				<li>
+					<h4>Roland do tolt</h4>
+			        <p style="color:black; font-size:medium">invited you to the "loot brick" meeting on the 21st of june</p>
+			        <p style="color:black; font-size:medium">10:11 am</p>
+			    </li>
+				<li>
+					<h4>Aditya Rahardi</h4>
+			        <p style="color:black; font-size:medium">Has developed special powers of unknown sources</p>
+			        <p style="color:black; font-size:medium">10:11 am</p>
+			    </li>
+				<li>
+					<h4>Gary Foo</h4>
+			        <p style="color:black; font-size:medium">Has decided to change his name to Gray because he believes it is a cooler name then his own</p>
+			        <p style="color:black; font-size:medium">3:11 pm</p>
+			    </li>
+				<li>
+					<h4>Gary Foo</h4>
+			        <p style="color:black; font-size:medium">Has decided to change his name to Gray because he believes it is a cooler name then his own</p>
+			        <p style="color:black; font-size:medium">3:11 pm</p>
+			    </li>
+			</ul>
+			
+			<p><a href="#" id="ticker-previous">Previous</a> / <a href="#" id="ticker-next">Next</a> / <a id="stop" href="#">Stop</a> / <a id="start" href="#">Start</a></p>
+			<p>Roll over the ticker to stop scrolling</p>
+			
+		</div>
+
+		</div> <!-- /container -->
+
+
+<!-- /nev -->
+		<script src="js/google-classie.js"></script>
+		<script src="js/google-gnmenu.js"></script>
+		<script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+
+
+	</body>
+</html>

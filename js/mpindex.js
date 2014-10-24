@@ -56,7 +56,7 @@ $.fn.csAccordion = function (args) {
                 var html = '';
                     html += '<div class="col heading">';
                 if ($(this).data('title')) {
-                    html += '<p class="h3">' + $(this).data('title') + '</p><div class="expand"></div>';
+                    html += '<p class="h3">' + $(this).data('title') + '</p>'+ '<p class="h4">' + $(this).data('subtitle') + '</p>';
                 }
 
                     html += '</div><div class="col content"><div class="inner_content">' + content + '</div>';

@@ -88,6 +88,13 @@ $row_count = count($project_name_array);
         <link rel="stylesheet" type="text/css" href="css/component.css" />
         <script src="js/modernizr.custom.js"></script>
 
+<!-- create project pop up -->
+
+    <!-- Demo Styles -->
+    <link href="css/popup-demo.css" rel="stylesheet">
+
+    <!-- Modal Styles -->
+    <link href="css/popup-modal.css" rel="stylesheet">
 
 
 <body id="top">
@@ -100,26 +107,37 @@ $row_count = count($project_name_array);
                     <ul class="dl-menu" style="right: 5px; width: 200px;left: -100px;">
                         
                         <li>
-                            <a href="#">Fashion</a>
-                            
+                            <a href="#modal">Create a project</a>
                         </li>
-                        <li>
-                            <a href="#">Electronics</a>
-                            
-                        </li>
-                        <li>
-                            <a href="#">Furniture</a>
-                            
-                        </li>
-                        <li>
-                            <a href="#">Bedroom</a>
-                                    
-                        </li>
+
 
                     </ul>
                 </div><!-- /dl-menuwrapper -->
 
-
+<div id="modal">
+        <div class="modal-content">
+            <div class="header">
+                <h2 style="color:#222;">Create Project</h2>
+            </div>
+            <div class="copy">
+                <p style="color: #222">
+                    <form style="font-weight:bold;">
+                        Project Name:
+                        <input type="text" name="project name">
+                        </br>Project Discription:</br>
+                        <textarea rows="4" cols="50"></textarea>
+                    </form>
+                </p>
+            </div>
+            <div class="cf footer" style="float:right;">
+                <a href="#" class="btn">Close</a>
+            </div>
+            <div class="cf footer" style="float:right;">
+                <a href="#" class="btn">Submit</a>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
 
 
                     <li class="gn-trigger">
@@ -134,24 +152,23 @@ $row_count = count($project_name_array);
                                                 </li>
                                             <!-- <li><a class="gn-icon gn-icon-cog">Home</a></li> (just incase)--> 
                                                 <li>
-                                                    <a href= "homepage.html"> <img src="img/homeicon.png"/>Home</a>
+                                                    <a href= "homepage.php" style="margin-left: 5%"> <img src="img/homeicon.png" style="padding-right: 5%"/>Home</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href= "project.html"> <img src="img/projectsicon.png"/>Projects</a>
+                                                    <a href= "project.php" style="margin-left: 5%"><img src="img/projectsicon.png" style= "padding-right: 5%">Projects</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="friends.html"> <img src="img/friendsicon.png"/>Friends</a>
+                                                    <a href="friends.php" style="margin-left: 5%"><img src="img/friendsicon.png" style="padding-right: 5%">Friends</a>
                                                 </li>
 
-                                                <li><a href"settings.html" class="gn-icon gn-icon-cog">Settings</a>
+                                                <li><a href"settings.php" class="gn-icon gn-icon-cog">Settings</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="index.php"> <img src="img/logout.png"/>LogOut</a>
+                                                    <a href="index.php"style="margin-left: 5%"><img src="img/logout.png" style="padding-right: 5%;">LogOut</a>
                                                 </li>
-
 
                                             </ul>
                                         </div><!-- /gn-scroller -->
@@ -194,25 +211,21 @@ $row_count = count($project_name_array);
 <div data-role="main" class="ui-content" style="margin-top:50px">
               <ul data-role="listview" data-inset="true">
 
-                    <li data-role="list-divider" style="
-    color: #1ABC9C;
-    font-size: x-large;
-    padding: 20px; margin-left: 90px">Projects 
-                        <span class="ui-li-count" style="
-    float: right;
-    margin-right: 10%"> <?php echo $row_count; ?> </span>
+                    <li data-role="list-divider" class="list-title-left-side">Projects 
+                        <span class="list-count-right-side" class="ui-li-count"><?php echo $row_count ?> </span>
                     </li> 
 					<?php
 					if ($row_count > 0) {
 						for ($i = 0; $i < count($project_name_array); $i++) {
 						?>
 
-						  <li style="margin-left:100px; margin-right:100px; margin-top:5px; margin-left:100px; margin-right:100px; margin-top:5px;/* border: solid; */border-bottom: solid;border-bottom-color: #1ABC9C;border-top: solid;border-top-color: #1ABC9C;">   
+						  <li class="project-list">   
 						  <h2><?php echo $project_name_array[$i]; ?></h2>
-								 <a href="meeting.php?project=<?php echo $project_id_array[$i]; ?>"> <img src="img/view.png" style="float:right;"> </a>
+								 <a href="meeting.php?project=<?php echo $project_id_array[$i]; ?>"> </a>
 									
-						  <p class="ui-li-aside" style="text-align:center"><?php echo $project_description_array[$i]; ?> </p>
-						  <p class="ui-li-aside" style="text-align:left;"> Date created: <?php echo $project_date_array[$i]; ?> </p>
+						  <p class="ui-li-aside" style="text-align:center;"><?php echo $project_description_array[$i]; ?> </p>
+						  <p class="view-img" class="ui-li-aside" > Date created: <?php echo $project_date_array[$i]; ?> 
+                            <a href="meeting.php?project=<?php echo $project_id_array[$i]; ?>"><img src="img/view.png"> </p></a>
 
 						</li>
 					<?php

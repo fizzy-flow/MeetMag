@@ -19,8 +19,8 @@ function checkUserTable($name, $value) {
 	}
 	
 function getUserID() {
-	$user_id_query = mysql_query("SELECT user_id FROM user WHERE email = '" . $_SESSION['email'] . "'");
-	$user_id = mysql_result($user_id_query, 0);
-	return $user_id;
+$user_id_query = mysql_query("SELECT user_id FROM user WHERE email = '" . $_SESSION['email'] . "'");
+$user_id = mysql_result($user_id_query, 0);
+return $user_id;
 }
 ?>

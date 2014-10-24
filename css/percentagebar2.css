@@ -1,0 +1,32 @@
+/** Style 2 **/
+
+.percentagebar
+{
+	position: relative;
+	width: 100%;
+	text-align: left;
+	margin: 0 0 20px 0;
+}
+
+	.percentagebar ul li
+	{
+		position: relative;
+		height: 20px;
+		list-style-type: none;
+		background: #333;
+		margin: 0 !important;
+		list-style-type: none !important;
+		
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+	
+		.percentagebar ul li div
+		{
+			position: absolute;
+			line-height: 20px;
+			font-family: "Merriweather", Georgia, Times New Roman, Times, serif;
+			font-size: 18px;
+			color: #FFF;
+		}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="test">
+	<head>
+		<script src="js/project-angular.min.js"></script>
+		<script src="js/Project-Pitch.js"></script>
+		<script src="js/ui-bootstrap-0.11.0.min.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	</head>
+	<body ng-controller="testCtrl">
+		<div>
+			<h1>
+				MeetMag Project
+			</h1>
+		</div>
+		<hr>
+		<div ng-repeat="meeting in Meetings">
+			<span>
+				<h3>{{meeting}} 
+					<div class="btn-group">
+						<label class="btn btn-primary green">S</label>
+						<label class="btn btn-primary yellow">E</label>
+						<label class="btn btn-primary red">D</label>
+					</div>
+				</h3>
+			</span>
+		</div>
+	</body>
+</html>

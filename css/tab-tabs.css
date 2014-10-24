@@ -34,7 +34,7 @@
 	display: flex;
 	margin: 0 auto;
 	padding: 0;
-	max-width: 1200px;
+	max-width: 90%;
 	list-style: none;
 	-ms-box-orient: horizontal;
 	-ms-box-pack: center;
@@ -177,15 +177,22 @@
 }
 
 .no-flexbox nav ul li {
-	min-width: 15%;
+/*	min-width: 15%;*/
 	display: inline-block;
 }
 
 @media screen and (max-width: 58em) {
 	.tabs nav a.icon span {
 		display: none;
+		position: fixed;
+		width: 50%;
+		height: 50px
+
+
 	}
 	.tabs nav a:before {
 		margin-right: 0;
+				width: 50%;
+		height: 50px
 	}
 }

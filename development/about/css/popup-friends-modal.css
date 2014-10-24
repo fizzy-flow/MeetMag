@@ -30,6 +30,7 @@
 	}
 #modal h2 {
 	margin:0;
+	color: white;
 }
 #modal .btn {
 	float:right;
@@ -56,4 +57,11 @@
 	top: 0;
 	width: 100%;
 	z-index: 10;
+}
+
+#modal .v-card{
+	font-weight:800;
+	color:white;
+	letter-spacing: 1px;
+	
 }

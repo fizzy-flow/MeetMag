@@ -61,7 +61,7 @@ h1{
 	font-weight:normal;
 	margin-bottom: 12px;	
 	line-height:1;
-	text-shadow:2px 2px 0 rgba(22,22,22,0.5);
+	/*text-shadow:2px 2px 0 rgba(22,22,22,0.5);*/
 }
 
 h2{
@@ -89,6 +89,7 @@ h2{
 
 #infoPage{
 	width:100%;
+	background-color:#222;
 	/*margin:200px auto 0;
 	padding: 0 0 100px 200px;
 	border-bottom:1px solid #333;*/
@@ -102,7 +103,9 @@ p.description{
 
 	-webkit-box-shadow: 2px 2px 0 rgba(22, 22, 22, 0.1);	
 	-moz-box-shadow: 2px 2px 0 rgba(22, 22, 22, 0.1);
-	box-shadow: 2px 2px 0 rgba(22, 22, 22, 0.1);
+	/*box-shadow: 2px 2px 0 rgba(22, 22, 22, 0.1);*/
+		letter-spacing: 1px;
+		margin-top:20px;
 }
 
 a.grayButton{
@@ -161,7 +164,7 @@ a.grayButton.twitter:before{
 #links{
 	text-align:center;
 	padding: 20px;
-	border-top:1px solid #4a4a4a;
+	/*s*/
 	text-shadow: 1px 1px 0 #333333;
 	/*width:655px;*/
 	margin:0 auto;

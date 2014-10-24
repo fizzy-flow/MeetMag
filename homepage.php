@@ -134,18 +134,18 @@ while($attendance_row = mysql_fetch_array($attendance_query)) {
                                                 </li>
                                             <!-- <li><a class="gn-icon gn-icon-cog">Home</a></li> (just incase)--> 
                                                 <li>
-                                                    <a href= "homepage.html"> <img src="img/homeicon.png"/>Home</a>
+                                                    <a href= "homepage.php"> <img src="img/homeicon.png"/>Home</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href= "project.html"> <img src="img/projectsicon.png"/>Projects</a>
+                                                    <a href= "project.php"> <img src="img/projectsicon.png"/>Projects</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="friends.html"> <img src="img/friendsicon.png"/>Friends</a>
+                                                    <a href="friends.php"> <img src="img/friendsicon.png"/>Friends</a>
                                                 </li>
 
-                                                <li><a href"settings.html" class="gn-icon gn-icon-cog">Settings</a>
+                                                <li><a href"settings.php" class="gn-icon gn-icon-cog">Settings</a>
                                                 </li>
 
                                                 <li>
