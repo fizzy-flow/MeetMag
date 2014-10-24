@@ -175,7 +175,7 @@ if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email
             <div class="fullwidth">
 
                 <header>
-                    <h1 style="color:#5ac9b2">Welcome to Meetmag!</span></h1>
+                    <h1>Welcome to Meetmag!</span></h1>
                 </header>
                 <section>               
                     <div>

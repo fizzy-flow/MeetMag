@@ -1,3 +1,23 @@
+
+<!-- V-CARD -->
+<?php
+
+require 'includes/config.php';
+require 'includes/aboutPage.class.php';
+require 'includes/vcard.class.php';
+
+$profile = new AboutPage($info);
+
+if(array_key_exists('json',$_GET)){
+    $profile->generateJSON();
+    exit;
+}
+else if(array_key_exists('vcard',$_GET)){
+    $profile->downloadVcard();
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
@@ -37,6 +57,9 @@
     <link rel="stylesheet" type="text/css" href="css/tab-tabs.css" />
     <link rel="stylesheet" type="text/css" href="css/tab-tabstyles.css" />
     <script src="js/tab-modernizr.custom.js"></script>
+        <!-- Our CSS stylesheet file -->
+        <link rel="stylesheet" href="assets/css/styles-friends.css" />
+   
     <?php
     session_start();
     if (!isset($_SESSION['email'])){
@@ -51,11 +74,11 @@
   $friend_id = array();
   $friend_name = array();
 
-	// Get all friend_id's that belong to us
+    // Get all friend_id's that belong to us
   $friend_query = mysql_query("SELECT * from friend WHERE user_id = '" . $user_id . "'");
   while($friend_row = mysql_fetch_array($friend_query)) {
       array_push($friend_id, $friend_row['friend_id']);
-		// Get the friends names belonging to all those ids
+        // Get the friends names belonging to all those ids
       $friend_name_query = mysql_query("SELECT * from user WHERE user_id = '" . $friend_row['friend_id'] . "'");
       while($friend_name_row = mysql_fetch_array($friend_name_query)) {
          $full_name = $friend_name_row['first'] . " " . $friend_name_row['last'];
@@ -63,7 +86,7 @@
      }
  }
 
-	// Get the groups that this user created
+    // Get the groups that this user created
  $group_id = array(); 
  $group_name = array();
 
@@ -82,6 +105,8 @@ while ($group_row = mysql_fetch_array($group_query)) {
 }
 
 ?>
+
+
 </head>
 
 
@@ -99,10 +124,60 @@ while ($group_row = mysql_fetch_array($group_query)) {
     <!-- Modal Styles -->
     <link href="css/popup-friends-modal.css" rel="stylesheet">
 
-
+<!-- from the meeting page -->
+<link rel="stylesheet" href="feather-webfont/feather.css">
 
 
 <body id="top">
+
+<!-- V-CARD pop up-->
+
+<div id="v-card-modal">
+        <div class="v-card-modal-content">
+
+            <div class="header">
+                <h1 class="v-card"><?php echo $profile->fullName()?> <p class="close-v-card"><a href="#" style="color:White;">CLOSE</a></p></h1> 
+            </div>
+
+ <section id="infoPage">
+    
+            <p>
+                <img src="<?php echo $profile->photoURL()?>" alt="<?php echo $profile->fullName()?>" width="164" height="164" style="margin-top:20px;" />
+            </p>
+            <header>
+                <h1 class="v-card"><?php echo $profile->fullName()?></h1>
+                <h2><?php echo $profile->tags()?></h2>
+            </header>
+            
+            <p class="description"><?php echo nl2br($profile->description())?></p>
+            <p class="company">Work: <?php echo nl2br($profile->company())?></p>
+            </br>
+            <p>Contact Me:</p>
+            <p class="cellphone">Phone Number: <?php echo nl2br($profile->cellphone())?></p>
+            <p class="email">Email: <?php echo nl2br($profile->email())?><p>
+
+            <br/>
+            
+            
+            <ul class="vcard">
+                <li class="fn"><?php echo $profile->fullName()?></li>
+                <li class="org"><?php echo $profile->company()?></li>
+                <li class="tel"><?php echo $profile->cellphone()?></li>
+                <li><a class="url" href="<?php echo $profile->website()?>"><?php echo $profile->website()?></a></li>
+            </ul>
+            
+    </section>
+    
+    <section id="links">
+        <a href="?vcard" class="vcard">Download as V-Card</a>
+        <a href="?json" class="json" class="v-card-bodal" >Get as a JSON feed</a>
+    </section>
+        
+
+    </div>
+        
+</div>
+
 
     <ul id="gn-menu" class="gn-menu-main" style="z-index:2">
         <div id="dl-menu" class="dl-menuwrapper" style="right:30px; position:absolute; z-index:10; float:right; align-content:right">
@@ -121,7 +196,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
 <!-- pop up -->
 <!-- add friend -->
 <div id="modal1">
-        <div class="modal1-content">
+        <div class="modal2-content">
             <div class="header" style="height:">
                 <h2>Add Friend</h2>
             </div>
@@ -135,7 +210,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
                     </form>
                 </p>
             </div>
-            <div class="cf footer" style="float:right; background-color:#1abc9c; ">
+            <div class="cf footer" >
                 <a href="#" class="btn">Close</a>
             </div>
         </div>
@@ -165,7 +240,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
                     </form>
                 </p>
             </div>
-            <div class="cf footer" style="float:right; background-color:#1abc9c; padding:15px;">
+            <div class="cf footer" >
                 <a href="#" class="btn">Close</a>
             </div>
         </div>
@@ -234,9 +309,9 @@ while ($group_row = mysql_fetch_array($group_query)) {
                                                     <span class="ui-li-count" style="float: right;"> <?php echo count($friend_id); ?> </span>
                                                 </li> 
                                                 <?php 
-                                                for ($i = 0; $i < count($friend_id); $i++) {					
+                                                for ($i = 0; $i < count($friend_id); $i++) {                    
                                                    ?>
-                                                   <li class="project-list" data-icon=""><a href="#">
+                                                   <li class="project-list" data-icon=""><a href="#v-card-modal">
                                                        <h2><?php echo $friend_name[$i]; ?></h2>
                                                    </li> 
                                                    <?php

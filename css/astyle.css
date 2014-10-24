@@ -242,6 +242,7 @@ html, body {
   background: #f7f9f7;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 /* line 11, ../sass/accordion/_base.scss */
 .csAccordion a {

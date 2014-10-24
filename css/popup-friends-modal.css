@@ -96,16 +96,22 @@
 		border:none;
 		border-top: 1px solid #e7e7e7;
 		border-radius: 0 0 5px 5px;
+		height: 60px;
+		width: 100%;
+		
 	}
 #modal1 h2 {
 	margin:0;
 	color: white;
 	font-size: x-large;
 	font-weight: bold;
-	color: #222;
+	padding: 0px;
+/*	color: #222;
+	height: 60px;*/
 }
 #modal1 .btn {
 	float:right;
+	width: 100%;
 }
 #modal1 .copy,#modal1 .header, #modal1 .footer {
 	padding-left:15px;
@@ -182,20 +188,13 @@
 	color: white;
 	font-size: x-large;
 	font-weight: bold;
-	color: #222;
+	padding: 0px;
+/*	color: #222;
+	height: 60px;*/
 }
 #modal2 .btn {
-/*	float:right;*/
-	margin-left: auto;
-	margin-right: auto;
-	width: 0;
-	font-size:x-large;
-	font-weight: bold;
-	color: white;
-	text-decoration: none;
-	right: auto;
-	left: auto;
-/*	right: 20%;*/
+	float:right;
+	width: 100%;
 	
 }
 #modal2 .copy,#modal2 .header, #modal2 .footer {
@@ -209,6 +208,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	border-radius:5px;
+
 }
 #modal2 .copy {
 	background: #fff;
