@@ -225,7 +225,7 @@ $row_count = count($project_name_array);
 									
 						  <p class="ui-li-aside" style="text-align:center;"><?php echo $project_description_array[$i]; ?> </p>
 						  <p class="view-img" class="ui-li-aside" > Date created: <?php echo $project_date_array[$i]; ?> 
-                            <a href="meeting.php?project=<?php echo $project_id_array[$i]; ?>"><img src="img/view.png"> </p></a>
+                            <a href="meeting.php?project_id=<?php echo $project_id_array[$i]; ?>"><img src="img/view.png"> </p></a>
 
 						</li>
 					<?php

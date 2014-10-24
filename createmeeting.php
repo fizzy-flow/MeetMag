@@ -107,7 +107,7 @@
 
 				</div>
                 <div class="main" ng-app="memberssss" style="width: 100%; max-width: 100%; padding: 0px 0; padding-bottom:5%;">
-                <form action="/inc/php/insert_meeting.php?project=<?php echo $project_id; ?>" method="POST" class="cbp-mc-form">
+                <form action="/inc/php/insert_meeting.php?project_id=<?php echo $project_id; ?>" method="POST" class="cbp-mc-form">
                     <div class="cbp-mc-column" ng-controller="numMembers">
 					
 						<!-- DISPLAY PROJECT TITLE HERE -->

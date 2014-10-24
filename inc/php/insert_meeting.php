@@ -10,7 +10,7 @@ echo 'Connected successfully';
 	$user_id_query = mysql_query("SELECT user_id FROM MeetMag_Example_Database.user WHERE email = '" . $_SESSION['email'] . "'");
 	$user_id = mysql_result($user_id_query, 0);
 
-	$project_id = $_GET['project'];
+	$project_id = $_GET['project_id'];
 	$name = $_POST['meeting_name'];
 	$description = $_POST['meeting_description'];
 	$location = $_POST['location'];
@@ -59,6 +59,6 @@ mysql_close($con);
 	
 	
 	
-header("Location:../../meeting.php?project=" . $project_id);
+header("Location:../../meeting.php?project_id=" . $project_id);
 	// Send error back to previous page 
  ?>
