@@ -127,7 +127,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
     <link href="css/popup-friends-modal.css" rel="stylesheet">
 
 <!-- from the meeting page -->
-<link rel="stylesheet" href="feather-webfont/feather.css">
+<!-- <link rel="stylesheet" href="feather-webfont/feather.css"> -->
 
 
 <body id="top">
@@ -253,24 +253,24 @@ while ($group_row = mysql_fetch_array($group_query)) {
 
         <!-- /dl-menuwrapper -->
         <li class="gn-trigger">
-            <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+            <a class="gn-icon gn-icon-menu" style="height: 100%; "><span>Menu</span></a>
             <nav class="gn-menu-wrapper">
                 <div class="gn-scroller">
-                    <ul class="gn-menu">
+                    <ul class="gn-menu"  >
                         <li>
-                            <a href="homepage.php" class="gn-icon icon icon-home">Home</a>
+                           <a href="homepage.php" class="gn-icon icon icon-home">Home</a>
                         </li>
 
                         <li>
-                            <a href="project.php" class="gn-icon icon icon-projects">Projects</a>
+                           <a href="project.php" class="gn-icon icon icon-projects">Projects</a>
                         </li>
 
                         <li>
-                            <a href="friends.php" class="gn-icon icon-friends" >Friends</a>
+                           <a href="friends.php" class="gn-icon icon-friends-fix" style="padding-left:17px;">Friends</a>
                         </li>
 
                         <li>
-                            <a href="index.php" class="gn-icon icon icon-logout">LogOut</a>
+                           <a href="index.php" class="gn-icon icon icon-logout">LogOut</a>
                         </li>
                     </ul>
                 </div><!-- /gn-scroller -->
@@ -309,7 +309,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
                                                 for ($i = 0; $i < count($friend_id); $i++) {                    
                                                    ?>
                                                    <li class="project-list" data-icon=""><a href="#v-card-modal">
-                                                       <h2><?php echo $friend_name[$i]; ?></h2>
+                                                       <h2 class="view-img" ><?php echo $friend_name[$i]; ?> <a href="v-card.php"><img src="img/view.png"> </p></a></h2>
                                                    </li> 
                                                    <?php
                                                }
