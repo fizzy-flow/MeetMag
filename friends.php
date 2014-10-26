@@ -1,23 +1,3 @@
-
-<!-- V-CARD -->
-<?php
-
-require 'includes/config.php';
-require 'includes/aboutPage.class.php';
-require 'includes/vcard.class.php';
-
-$profile = new AboutPage($info);
-
-if(array_key_exists('json',$_GET)){
-    $profile->generateJSON();
-    exit;
-}
-else if(array_key_exists('vcard',$_GET)){
-    $profile->downloadVcard();
-    exit;
-}
-
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
@@ -34,8 +14,6 @@ else if(array_key_exists('vcard',$_GET)){
     <link rel="stylesheet" href="css/astyle.css" media="screen" type="text/css" />
     <!--[if IE]><![endif]-->
     <link rel="stylesheet" href="css/gravity-style.css">
-    <link rel="stylesheet" href="css/style.css">
-
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/waypoints.min.js"></script>
@@ -59,9 +37,6 @@ else if(array_key_exists('vcard',$_GET)){
     <link rel="stylesheet" type="text/css" href="css/tab-tabs.css" />
     <link rel="stylesheet" type="text/css" href="css/tab-tabstyles.css" />
     <script src="js/tab-modernizr.custom.js"></script>
-        <!-- Our CSS stylesheet file -->
-        <link rel="stylesheet" href="assets/css/styles-friends.css" />
-   
     <?php
     session_start();
     if (!isset($_SESSION['email'])){
@@ -76,11 +51,11 @@ else if(array_key_exists('vcard',$_GET)){
   $friend_id = array();
   $friend_name = array();
 
-    // Get all friend_id's that belong to us
+	// Get all friend_id's that belong to us
   $friend_query = mysql_query("SELECT * from friend WHERE user_id = '" . $user_id . "'");
   while($friend_row = mysql_fetch_array($friend_query)) {
       array_push($friend_id, $friend_row['friend_id']);
-        // Get the friends names belonging to all those ids
+		// Get the friends names belonging to all those ids
       $friend_name_query = mysql_query("SELECT * from user WHERE user_id = '" . $friend_row['friend_id'] . "'");
       while($friend_name_row = mysql_fetch_array($friend_name_query)) {
          $full_name = $friend_name_row['first'] . " " . $friend_name_row['last'];
@@ -88,7 +63,7 @@ else if(array_key_exists('vcard',$_GET)){
      }
  }
 
-    // Get the groups that this user created
+	// Get the groups that this user created
  $group_id = array(); 
  $group_name = array();
 
@@ -107,8 +82,6 @@ while ($group_row = mysql_fetch_array($group_query)) {
 }
 
 ?>
-
-
 </head>
 
 
@@ -119,67 +92,17 @@ while ($group_row = mysql_fetch_array($group_query)) {
 <script src="js/modernizr.custom.js"></script>
 
 <!-- create project pop up -->
-<link rel="stylesheet" href="css/style.css">
+
     <!-- Demo Styles -->
     <link href="css/popup-friends-demo.css" rel="stylesheet">
 
     <!-- Modal Styles -->
     <link href="css/popup-friends-modal.css" rel="stylesheet">
 
-<!-- from the meeting page -->
-<!-- <link rel="stylesheet" href="feather-webfont/feather.css"> -->
+
 
 
 <body id="top">
-
-<!-- V-CARD pop up-->
-
-<div id="v-card-modal">
-        <div class="v-card-modal-content">
-
-            <div class="header">
-                <h1 class="v-card"><?php echo $profile->fullName()?> <p class="close-v-card"><a href="#" style="color:White;">CLOSE</a></p></h1> 
-            </div>
-
- <section id="infoPage">
-    
-            <p>
-                <img src="<?php echo $profile->photoURL()?>" alt="<?php echo $profile->fullName()?>" width="164" height="164" style="margin-top:20px;" />
-            </p>
-            <header>
-                <h1 class="v-card"><?php echo $profile->fullName()?></h1>
-                <h2><?php echo $profile->tags()?></h2>
-            </header>
-            
-            <p class="description"><?php echo nl2br($profile->description())?></p>
-            <p class="company">Work: <?php echo nl2br($profile->company())?></p>
-            </br>
-            <p>Contact Me:</p>
-            <p class="cellphone">Phone Number: <?php echo nl2br($profile->cellphone())?></p>
-            <p class="email">Email: <?php echo nl2br($profile->email())?><p>
-
-            <br/>
-            
-            
-            <ul class="vcard">
-                <li class="fn"><?php echo $profile->fullName()?></li>
-                <li class="org"><?php echo $profile->company()?></li>
-                <li class="tel"><?php echo $profile->cellphone()?></li>
-                <li><a class="url" href="<?php echo $profile->website()?>"><?php echo $profile->website()?></a></li>
-            </ul>
-            
-    </section>
-    
-    <section id="links">
-        <a href="?vcard" class="vcard">Download as V-Card</a>
-        <a href="?json" class="json" class="v-card-bodal" >Get as a JSON feed</a>
-    </section>
-        
-
-    </div>
-        
-</div>
-
 
     <ul id="gn-menu" class="gn-menu-main" style="z-index:2">
         <div id="dl-menu" class="dl-menuwrapper" style="right:30px; position:absolute; z-index:10; float:right; align-content:right">
@@ -205,10 +128,10 @@ while ($group_row = mysql_fetch_array($group_query)) {
             <div class="copy">
                 <p style="color: #222; padding:0em; ">
                     
-                    <form style="font-weight:bold; font-size:medium;">
+                    <form method="post" action="/inc/php/addFriend.php" style="font-weight:bold; font-size:medium;">
                         Friend's E-mail:
-                        <input type=search results=5 autosave=some_unique_value name=s>
-                        <button class="button-link"> Go </button>
+                        <input type="text" size="40" name="friendEmail">
+                        <input type="submit" class="button-link" value="Add">
                     </form>
                 </p>
             </div>
@@ -242,7 +165,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
                     </form>
                 </p>
             </div>
-            <div class="cf footer" >
+            <div class="cf footer" style="float:right; background-color:#1abc9c; padding:15px;">
                 <a href="#" class="btn">Close</a>
             </div>
         </div>
@@ -253,24 +176,29 @@ while ($group_row = mysql_fetch_array($group_query)) {
 
         <!-- /dl-menuwrapper -->
         <li class="gn-trigger">
-            <a class="gn-icon gn-icon-menu" style="height: 100%; "><span>Menu</span></a>
+            <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
             <nav class="gn-menu-wrapper">
                 <div class="gn-scroller">
-                    <ul class="gn-menu"  >
-                        <li>
-                           <a href="homepage.php" class="gn-icon icon icon-home">Home</a>
+                    <ul class="gn-menu">
+                        <li class="gn-search-item">
+                            <input placeholder="Search" type="search" class="gn-search">
+                            <a class="gn-icon gn-icon-search"><span>Search</span></a>
                         </li>
-
+                        <!-- <li><a class="gn-icon gn-icon-cog">Home</a></li> (just incase)--> 
                         <li>
-                           <a href="project.php" class="gn-icon icon icon-projects">Projects</a>
+                            <a href= "homepage.php"> <img src="img/homeicon.png"/>Home</a>
                         </li>
-
                         <li>
-                           <a href="friends.php" class="gn-icon icon-friends-fix" style="padding-left:17px;">Friends</a>
+                            <a href= "project.php"> <img src="img/projectsicon.png"/>Projects</a>
                         </li>
-
                         <li>
-                           <a href="index.php" class="gn-icon icon icon-logout">LogOut</a>
+                            <a href="friends.phpp"> <img src="img/friendsicon.png"/>Friends</a>
+                        </li>
+                        <li>
+                            <a href"settings.php" class="gn-icon gn-icon-cog">Settings</a>
+                        </li>
+                        <li>
+                            <a href="index.php"> <img src="img/logout.png"/>LogOut</a>
                         </li>
                     </ul>
                 </div><!-- /gn-scroller -->
@@ -306,10 +234,10 @@ while ($group_row = mysql_fetch_array($group_query)) {
                                                     <span class="ui-li-count" style="float: right;"> <?php echo count($friend_id); ?> </span>
                                                 </li> 
                                                 <?php 
-                                                for ($i = 0; $i < count($friend_id); $i++) {                    
+                                                for ($i = 0; $i < count($friend_id); $i++) {					
                                                    ?>
-                                                   <li class="project-list" data-icon=""><a href="#v-card-modal">
-                                                       <h2 class="view-img" ><?php echo $friend_name[$i]; ?> <a href="v-card.php"><img src="img/view.png"> </p></a></h2>
+                                                   <li class="project-list" data-icon=""><a href="#">
+                                                       <h2><?php echo $friend_name[$i]; ?></h2>
                                                    </li> 
                                                    <?php
                                                }
