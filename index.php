@@ -182,7 +182,7 @@ if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email
                         <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
                         <a class="hiddenanchor" id="toregister"></a>
                         <a class="hiddenanchor" id="tologin"></a>
-                        <div id="wrapper">
+                        <div id="wrapper" class="wrapper-index">
                             <div id="login" class="animate form">
                                 <form method="post" autocomplete="on" action="login.php"> 
                                     <h1>Log in</h1> 

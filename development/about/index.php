@@ -103,8 +103,6 @@ else if(array_key_exists('vcard',$_GET)){
 
     
     <body>
-<div id="modal">
-        <div class="modal-content">
 
             <div class="header">
                 <h1 class="v-card"><?php echo $profile->fullName()?> <p style=" float:right; color:White;"><a href="#" style="color:White;">CLOSE</a></p></h1> 
@@ -145,9 +143,6 @@ else if(array_key_exists('vcard',$_GET)){
     </section>
         
 
-    </div>
-        
-</div>
 
 
     

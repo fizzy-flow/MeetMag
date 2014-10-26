@@ -40,34 +40,5 @@
 
 /** Settings **/
 
-$(document).ready(function() { 
-	$('#googlemap')
-	//-27.495126,153.011998
-	  .gmap3( { action:'init', options:{ center:[-27.495126,153.011998], zoom: 14, minZoom: 8, maxZoom: 18, mapTypeId: google.maps.MapTypeId.MAP, mapTypeControl: true, navigationControl: true, streetViewControl: true, scrollwheel: true } },
-	  { action: 'addMarkers',
-		markers:[ {lat: -27.495126, lng: 153.011998, data:'University of Queensland' }],
-		marker:{
-		  options: { draggable: false },
-		  events:{
-			mouseover: function(marker, event, data){
-			  var map = $(this).gmap3('get'),
-				  infowindow = $(this).gmap3({action:'get', name:'infowindow'});
-			  if (infowindow){
-				infowindow.open(map, marker);
-				infowindow.setContent(data);
-			  } else {
-				$(this).gmap3({action:'addinfowindow', anchor:marker, options:{content: data}});
-			  }
-			},
-			mouseout: function(){
-			  var infowindow = $(this).gmap3({action:'get', name:'infowindow'});
-			  if (infowindow){
-				infowindow.close();
-			  }
-			}
-		  }
-		}
-	  }
-	);
-},"autofit" );
+
 

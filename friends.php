@@ -34,6 +34,8 @@ else if(array_key_exists('vcard',$_GET)){
     <link rel="stylesheet" href="css/astyle.css" media="screen" type="text/css" />
     <!--[if IE]><![endif]-->
     <link rel="stylesheet" href="css/gravity-style.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/waypoints.min.js"></script>
@@ -117,7 +119,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
 <script src="js/modernizr.custom.js"></script>
 
 <!-- create project pop up -->
-
+<link rel="stylesheet" href="css/style.css">
     <!-- Demo Styles -->
     <link href="css/popup-friends-demo.css" rel="stylesheet">
 
@@ -196,7 +198,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
 <!-- pop up -->
 <!-- add friend -->
 <div id="modal1">
-        <div class="modal2-content">
+        <div class="modal1-content">
             <div class="header" style="height:">
                 <h2>Add Friend</h2>
             </div>
@@ -210,7 +212,7 @@ while ($group_row = mysql_fetch_array($group_query)) {
                     </form>
                 </p>
             </div>
-            <div class="cf footer" >
+            <div class="cf footer" style="float:right; background-color:#1abc9c; ">
                 <a href="#" class="btn">Close</a>
             </div>
         </div>
@@ -255,25 +257,20 @@ while ($group_row = mysql_fetch_array($group_query)) {
             <nav class="gn-menu-wrapper">
                 <div class="gn-scroller">
                     <ul class="gn-menu">
-                        <li class="gn-search-item">
-                            <input placeholder="Search" type="search" class="gn-search">
-                            <a class="gn-icon gn-icon-search"><span>Search</span></a>
-                        </li>
-                        <!-- <li><a class="gn-icon gn-icon-cog">Home</a></li> (just incase)--> 
                         <li>
-                            <a href= "homepage.php"> <img src="img/homeicon.png"/>Home</a>
+                            <a href="homepage.php" class="gn-icon icon icon-home">Home</a>
                         </li>
+
                         <li>
-                            <a href= "project.php"> <img src="img/projectsicon.png"/>Projects</a>
+                            <a href="project.php" class="gn-icon icon icon-projects">Projects</a>
                         </li>
+
                         <li>
-                            <a href="friends.phpp"> <img src="img/friendsicon.png"/>Friends</a>
+                            <a href="friends.php" class="gn-icon icon-friends" >Friends</a>
                         </li>
+
                         <li>
-                            <a href"settings.php" class="gn-icon gn-icon-cog">Settings</a>
-                        </li>
-                        <li>
-                            <a href="index.php"> <img src="img/logout.png"/>LogOut</a>
+                            <a href="index.php" class="gn-icon icon icon-logout">LogOut</a>
                         </li>
                     </ul>
                 </div><!-- /gn-scroller -->

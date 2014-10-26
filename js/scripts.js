@@ -195,18 +195,6 @@ $(document).ready(function(){
 
 
 
-/** Countdown Timer **/
-
-$(document).ready(function(){
-	$("#countdown").countdown({
-		date: "12 june 2015 12:00:00", /** Enter new date here **/
-		format: "on"
-	},
-	function() {
-		// callback function
-	});
-});
-
 /** Scroll **/
 
 $(function() {

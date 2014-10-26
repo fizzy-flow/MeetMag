@@ -1,13 +1,13 @@
 var i = 1;
 var u = 1;
-//Adds and remove new div
+//Adds and remove Agenda
 $(function() {
 
         u = $('#p_agendas p').size() + 2;
 
         $(document.body).on('click', '#addAgendaSec', function(){
 
-                        var htmlCode = '<p><label for="p_agendas"><input type="text" id="AgendaTitle'+u+'" name="agendaTitle[agendaTitle'+u+']" placeholder="Agenda Title '+u+'"></input><input type="text" id="AgendaDescp'+u+'" name="agendaDesc[agendaDesc'+u+']" placeholder="Agenda Description '+u+'" ></input></label><a id="removeAgendaSec"><span class="icon-minus"></span></a></p>';
+                        var htmlCode = '<p><label for="p_agendas"><input type="text" id="AgendaTitle'+u+'" name="agendaTitle[agendaTitle'+u+']" placeholder="Agenda Title '+u+'"></input><input type="text" id="AgendaDescp'+u+'" name="agendaDesc[agendaDesc'+u+']" placeholder="Agenda Description '+u+'" ></input><input type="number" placeholder="Agenda Time (Mins)" name="agendaTime[agendaTime'+u+']" min=0 max=59></input></label><a id="removeAgendaSec"><span class="icon-minus"></span></a></p>';
                         $(htmlCode).hide().appendTo('#agendasDiv').fadeIn("slow");
                         u++;
         });
@@ -24,8 +24,7 @@ $(function() {
 });
 
 
-
-//Adds and remove new option
+//Adds and remove new Member
 $(function() {
         i = $('#p_members p').size() + 2;
         

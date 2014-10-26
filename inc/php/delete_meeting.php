@@ -39,6 +39,6 @@ while ($creator_id_row = mysql_fetch_array($creator_id_query)) {
 		
 
 	}
-	//header('Location:../../meeting.php?project_id=' . $project_id);
+	header('Location:../../meeting.php?project_id=' . $project_id);
 }
 ?>

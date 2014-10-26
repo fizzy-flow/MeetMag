@@ -17,10 +17,8 @@ $info = array(
 	'website'		=> 'http://tutorialzine.com/',
 	'email'			=> 'faisal.alsiddiqi@uqconnect.edu.au',
 	'cellphone'		=> '040503230',
-	'description'	=> "I am a webdeveloper living in California. I enjoy designing and coding web applications, photography, surfing and music.\n\nFollow me on twitter or facebook.",
-	'tags'			=> 'Developer, Designer, Photographer',
-	'facebook'		=> 'http://www.facebook.com/',
-	'twitter'		=> 'http://twitter.com/Tutorialzine'
+	'description'	=> 'I am a webdeveloper living in California. I enjoy designing and coding web applications, photography, surfing and music.',
+	'tags'			=> 'Developer, Designer, Photographer'
 );
 
 

@@ -48,6 +48,7 @@ $row_count = count($project_name_array);
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
 <link rel="shortcut icon" href="images/meetmagicon/meetmagicon-32(2).png">
+<link rel="stylesheet" href="css/style.css">
 
 <link rel="stylesheet" href="css/astyle.css" media="screen" type="text/css" />
 <!--[if IE]><![endif]-->
@@ -146,28 +147,20 @@ $row_count = count($project_name_array);
                                 <nav class="gn-menu-wrapper">
                                         <div class="gn-scroller">
                                             <ul class="gn-menu">
-                                                <li class="gn-search-item">
-                                                    <input placeholder="Search" type="search" class="gn-search">
-                                                    <a class="gn-icon gn-icon-search"><span>Search</span></a>
-                                                </li>
-                                            <!-- <li><a class="gn-icon gn-icon-cog">Home</a></li> (just incase)--> 
-                                                <li>
-                                                    <a href= "homepage.php" style="margin-left: 5%"> <img src="img/homeicon.png" style="padding-right: 5%"/>Home</a>
+                                                                                               <li>
+                                                    <a href="homepage.php" class="gn-icon icon icon-home">Home</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href= "project.php" style="margin-left: 5%"><img src="img/projectsicon.png" style= "padding-right: 5%">Projects</a>
+                                                    <a href="project.php" class="gn-icon icon icon-projects">Projects</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="friends.php" style="margin-left: 5%"><img src="img/friendsicon.png" style="padding-right: 5%">Friends</a>
-                                                </li>
-
-                                                <li><a href"settings.php" class="gn-icon gn-icon-cog">Settings</a>
+                                                    <a href="friends.php" class="gn-icon icon-friends" >Friends</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="index.php"style="margin-left: 5%"><img src="img/logout.png" style="padding-right: 5%;">LogOut</a>
+                                                    <a href="index.php" class="gn-icon icon icon-logout">LogOut</a>
                                                 </li>
 
                                             </ul>

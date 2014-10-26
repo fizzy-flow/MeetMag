@@ -113,7 +113,7 @@ while($project_contains_meeting_row = mysql_fetch_array($project_contains_meetin
                     <ul class="dl-menu" style="right: 5px; width: 200px;left: -100px;">
                         
                         <li>
-                            <a href="createmeeting.php?project=<?php echo $project_id; ?>">Create Meeting</a>
+                            <a href="createmeeting.php?project_id=<?php echo $project_id; ?>">Create Meeting</a>
                             
                         </li>
 
@@ -191,10 +191,10 @@ while($project_contains_meeting_row = mysql_fetch_array($project_contains_meetin
 					<?php
 					for ($i = 0; $i < count($current_meeting_names); $i++) {
 					?>
-                    <li data-title=" <?php echo $current_meeting_names[$i]; ?>" data-subtitle="<?php echo $current_meeting_location[$i]; ?>, <?php echo $current_meeting_datetime[$i]; ?>" data-featured="true" class="">
+                    <li data-title="<?php echo $current_meeting_names[$i]; ?>" data-subtitle="<?php echo $current_meeting_location[$i]; ?>, <?php echo $current_meeting_datetime[$i]; ?>" data-featured="true" class="">
 							<p> <?php echo $current_meeting_description[$i]; ?> </p>
-							<a href=<?php echo "http://deco3801-12.uqcloud.net/inmeeting.php?meeting_id=" . $current_meeting_id[$i] . "&project_id=" . $project_id ?>><span class="icon-play"></span></a>
-							<a href=<?php echo "http://deco3801-12.uqcloud.net/createmeeting.php?meeting_id=" . $current_meeting_id[$i] . "&project_id=" . $project_id ?> ><span class="icon-cog"></span></a>
+							<a href=<?php echo "http://deco3801-12.uqcloud.net/inmeeting.php?meeting_id=" . $current_meeting_id[$i] . "&project_id=" . $project_id; ?>><span class="icon-play"></span></a>
+							<a href=<?php echo "http://deco3801-12.uqcloud.net/createmeeting.php?meeting_id=" . $current_meeting_id[$i] . "&project_id=" . $project_id; ?> ><span class="icon-cog"></span></a>
 							<a onclick='<?php echo "confirmDelete(" . $current_meeting_id[$i] . "," . $project_id . ")"; ?>' href="#"><span class="icon-cross"></span></a>
 					</li>
 					<?php
@@ -208,7 +208,7 @@ while($project_contains_meeting_row = mysql_fetch_array($project_contains_meetin
                     <?php
 					for ($i = 0; $i < count($past_meeting_names); $i++) {
 					?>
-						<li data-title=" <?php echo $past_meeting_names[$i]; ?>" data-featured="true" class="">     
+						<li data-title="<?php echo $past_meeting_names[$i]; ?>" data-subtitle="" data-featured="true" class="">     
 							<p> <?php echo $past_meeting_description[$i]; ?> </p>
 							<a href=""><span class="icon-eye"></span></a>
 						</li>

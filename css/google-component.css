@@ -41,18 +41,28 @@
 }
 
 .gn-menu-main a {
-		display: block;
-		height: 100%;
-		color: #5f6f81;
+/*		display: block;*/
+/*		height: 100%;*/
+/*		color: #5f6f81;*/
+		color: white;
 		text-decoration: none;
 		cursor: pointer;
+
 }
+
+a:hover{
+/*   		background-color: #1abc9c;*/
+   		text-decoration: none;
+   		color: white;
+}
+
 
 .no-touch .gn-menu-main a:hover,
 .no-touch .gn-menu li.gn-search-item:hover,
 .no-touch .gn-menu li.gn-search-item:hover a {
 		/*background: #5f6f81; */
-		color: white;
+		/*color: white;*/
+		color: #1ABC9C;
 }
 
 .gn-menu-main > li {

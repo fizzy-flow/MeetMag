@@ -48,7 +48,7 @@ while($attendance_row = mysql_fetch_array($attendance_query)) {
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
 <link rel="shortcut icon" href="images/meetmagicon/meetmagicon-32(2).png">
-
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/astyle.css" media="screen" type="text/css" />
 <!--[if IE]><![endif]-->
 <link rel="stylesheet" href="css/gravity-style.css">
@@ -74,90 +74,38 @@ while($attendance_row = mysql_fetch_array($attendance_query)) {
         <script src="js/google-modernizr.custom.js"></script></head>
 
 
-<!-- action menu (top Left) -->
-
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Responsive Multi-Level Menu - Demo 2</title>
-        <meta name="description" content="Responsive Multi-Level Menu: Space-saving drop-down menu with subtle effects" />
-        <meta name="keywords" content="multi-level menu, mobile menu, responsive, space-saving, drop-down menu, css, jquery" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/default.css" />
-        <link rel="stylesheet" type="text/css" href="css/component.css" />
-        <script src="js/modernizr.custom.js"></script>
-
-
 
 <body id="top">
 
     <ul id="gn-menu" class="gn-menu-main" style="z-index:2">
-
-
-                <div id="dl-menu" class="dl-menuwrapper" style="right:30px; position:absolute; z-index:10; float:right; align-content:right">
-                    <button class="dl-trigger" style="padding-right: 30px;">Open Menu</button>
-                    <ul class="dl-menu" style="right: 5px; width: 200px;left: -100px;">
-                        
-                        <li>
-                            <a href="#">Fashion</a>
-                            
-                        </li>
-                        <li>
-                            <a href="#">Electronics</a>
-                            
-                        </li>
-                        <li>
-                            <a href="#">Furniture</a>
-                            
-                        </li>
-                        <li>
-                            <a href="#">Bedroom</a>
-                                    
-                        </li>
-
-                    </ul>
-                </div><!-- /dl-menuwrapper -->
-
-
-
-
                     <li class="gn-trigger">
                             <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
 
                                 <nav class="gn-menu-wrapper">
                                         <div class="gn-scroller">
                                             <ul class="gn-menu">
-                                                <li class="gn-search-item">
-                                                    <input placeholder="Search" type="search" class="gn-search">
-                                                    <a class="gn-icon gn-icon-search"><span>Search</span></a>
-                                                </li>
+                                                
                                             <!-- <li><a class="gn-icon gn-icon-cog">Home</a></li> (just incase)--> 
                                                 <li>
-                                                    <a href= "homepage.php"> <img src="img/homeicon.png"/>Home</a>
+                                                    <a href="homepage.php" class="gn-icon icon icon-home">Home</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href= "project.php"> <img src="img/projectsicon.png"/>Projects</a>
+                                                    <a href="project.php" class="gn-icon icon icon-projects">Projects</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="friends.php"> <img src="img/friendsicon.png"/>Friends</a>
-                                                </li>
-
-                                                <li><a href"settings.php" class="gn-icon gn-icon-cog">Settings</a>
+                                                    <a href="friends.php" class="gn-icon icon-friends" >Friends</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="index.php"> <img src="img/logout.png"/>LogOut</a>
+                                                    <a href="index.php" class="gn-icon icon icon-logout">LogOut</a>
                                                 </li>
 
 
                                             </ul>
                                         </div><!-- /gn-scroller -->
                                 </nav>
-
-
                     </li>
 
             </ul>
