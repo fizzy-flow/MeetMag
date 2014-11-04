@@ -67,44 +67,6 @@ $(function() {
 
     });
 });
-
-/*$(function() {
-    var dataString;
-    $(".button").click(function() {
-        var inputs = formNum["p_opt[]"];
-        for (var i = 0; i < inputs.length; i++) {
-            dataString += inputs[i].value;
-        }
-        dataString = 'name='+ name + '&email=' + email + '&phone=' + phone;
-  //alert (dataString);return false;
-  $.ajax({
-    type: "POST",
-    url: "inc/php/process.php",
-    data: dataString,
-    success: function() {
-      $('#success_div').html("<div id='message'></div>");
-      $('#message').html("<h2>Poll Form Submitted!</h2>")
-      .append("<p>We will be in touch soon.</p>")
-      .hide()
-      .fadeIn(1500, function() {
-        $('#message').append("<img id='checkmark' src='images/check.png'/>");
-    });
-  }
-});
-  return false;
-});
-});*/
-
-/*
-//Adds and remove new option
- $(function() {
-    $('#divToRefresh').load('thephpfile.php');
-    var refreshId = setInterval(function() {
-        $('#divToRefresh').fadeOut(“slow”).load('thephpfile.php').fadeIn(“slow”);
-    }, 5000);
-    $.ajaxSetup({ cache: false });
-});*/
-
     function showRequest(formData, jqForm, options) { 
         var queryString = $.param(formData); 
         alert('About to submit: \n\n' + queryString); 
@@ -116,3 +78,12 @@ function showResponse(responseText, statusText, xhr, $form)  {
     alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
         '\n\nThe output div should have already been updated with the responseText.'); 
 } 
+
+/*
+ $(function() {
+    $('#divToRefresh').load('thephpfile.php');
+    var refreshId = setInterval(function() {
+        $('#divToRefresh').fadeOut(“slow”).load('thephpfile.php').fadeIn(“slow”);
+    }, 5000);
+    $.ajaxSetup({ cache: false });
+});*\

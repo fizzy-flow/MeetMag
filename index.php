@@ -10,170 +10,119 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
 <link rel="shortcut icon" href="images/meetmagicon/meetmagicon-32(2).png">
-
 <link rel="stylesheet" href="css/astyle.css" media="screen" type="text/css" />
 <!--[if IE]><![endif]-->
 <link rel="stylesheet" href="css/gravity-style.css">
-<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!-- <script src="js/jquery.min.js"></script>
 <script src="js/index.js"></script>
 <script src="js/waypoints.min.js"></script>
-
-
 <script src="js/gmap.js"></script>
-<script src="js/scripts.js"></script>
+<script src="js/scripts.js"></script> -->
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-
-
-
-
-        <title>Login and Registration Form with HTML5 and CSS3</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="MeetMag Login & Signup Page" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-        <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
-
-
-
-
-
-
+<!--         <title>Login and Registration Form with HTML5 and CSS3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="MeetMag Login & Signup Page" />
+<link rel="shortcut icon" href="../favicon.ico"> 
+<link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
+<!--         <link rel="stylesheet" type="text/css" href="css/animate-custom.css" /> -->
 <?php
-include_once 'inc/php/config.php';
-include_once 'inc/php/functions.php';
-include_once 'inc/php/db_functions.php';
-
+    include_once 'inc/php/config.php';
+    include_once 'inc/php/functions.php';
+    include_once 'inc/php/db_functions.php';
 //setup some variables/arrays
-$action = array();
-$action['result'] = null;
-
-$text = array();
-
-//check if the form has been submitted
-if(isset($_POST['signup'])){
-
-    //cleanup the variables
-    //prevent mysql injection
-    $firstName = mysql_real_escape_string($_POST['firstnamesignup']);
-    $lastName = mysql_real_escape_string($_POST['lastnamesignup']);
-    $password = mysql_real_escape_string($_POST['passwordsignup']);
-    $emailsignup = mysql_real_escape_string($_POST['emailsignup']);
-    $phone_num = mysql_real_escape_string($_POST['pnosignup']);
-    
-    //quick/simple validation
-    //if(empty($firstName)){ $action['result'] = 'error'; array_push($text,'You forgot your firstName'); }
-    //if(empty($lastName)){ $action['result'] = 'error'; array_push($text,'You forgot your lastName'); }
-    //if(empty($password)){ $action['result'] = 'error'; array_push($text,'You forgot your password'); }
-    //if(empty($emailsignup)){ $action['result'] = 'error'; array_push($text,'You forgot your emailsignup'); }
-    
-    // ----- Validate input fields here -----
-if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email - found in db_function.php
-        $action['result'] = 'error';
-        $text = "Email $emailsignup already exists!";
-    } elseif (!ctype_digit($phone_num) && strlen($phone_num) > 7) { // Check if it is all digits - found in functions.php
-        $action['result'] = 'error';
-        $text = "Invalid phone number!";
-    } elseif (strlen($password) < 6) { // Check if password is > 6 characters found in functions.php
-        $action['result'] = 'error';
-        $text = "Password must be atleast 6 characters long!";
-    }
-    
-    if($action['result'] != 'error'){
-
-        //$password = md5($password);
-            
-        //add to the database
-        $add = mysql_query("INSERT INTO `user` (user_id, email, phone_num, password, first, last) VALUES(NULL, '$emailsignup','$phone_num','$password','$firstName','$lastName')");
-        
-        if($add){
-            /*
-            //get the new user id
-            $userid = mysql_insert_id();
-            
-            //create a random key
-            $key = $firstName . $lastName . $emailsignup . date('mY');
-            $key = md5($key);
-            
-            //add confirm row
-            $confirm = mysql_query("INSERT INTO `confirm` VALUES(NULL,'$lastName','$key','$emailsignup')"); 
-            
-            if($confirm){
-            
-                //include the swift class
-                include_once 'inc/php/swift/swift_required.php';
-            
-                //put info into an array to send to the function
-                $info = array(
-                    'firstName' => $firstName,
-                    'lastName' => $lastName,
-                    'emailsignup' => $emailsignup,
-                    'key' => $key);
-            
-                //send the emailsignup
-                if(send_emailsignup($info)){
-                                
-                    //emailsignup sent`````````````````````````````````````````````````````````````````````````````````````````````````````````````````
-                    $action['result'] = 'success';
-                    array_push($text,'Thanks for signing up. Please check your emailsignup for confirmation!');
-                
-                }else{
-                    
-                    $action['result'] = 'error';
-                    array_push($text,'Could not send confirm emailsignup');
-                
-                }
-            
-            }else{
-                
-                $action['result'] = 'error';
-                array_push($text,'Confirm row was not added to the database. Reason: ' . mysql_error());
-                
-            }
-            */
-        
-        // Redirect to homepage
-        header('Location:index.php#tologin');
-            
-        }else{
-        
+    $action = array();
+    $action['result'] = null;
+    $text = array();
+    //check if the form has been submitted
+    if(isset($_POST['signup'])){
+        //cleanup the variables
+        //prevent mysql injection
+        $firstName = mysql_real_escape_string($_POST['firstnamesignup']);
+        $lastName = mysql_real_escape_string($_POST['lastnamesignup']);
+        $password = mysql_real_escape_string($_POST['passwordsignup']);
+        $emailsignup = mysql_real_escape_string($_POST['emailsignup']);
+        $phone_num = mysql_real_escape_string($_POST['pnosignup']);
+        //quick/simple validation
+        //if(empty($firstName)){ $action['result'] = 'error'; array_push($text,'You forgot your firstName'); }
+        //if(empty($lastName)){ $action['result'] = 'error'; array_push($text,'You forgot your lastName'); }
+        //if(empty($password)){ $action['result'] = 'error'; array_push($text,'You forgot your password'); }
+        //if(empty($emailsignup)){ $action['result'] = 'error'; array_push($text,'You forgot your emailsignup'); }
+        // ----- Validate input fields here -----
+    if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email - found in db_function.php
             $action['result'] = 'error';
-            array_push($text,'User could not be added to the database. Reason: ' . mysql_error());
-        
+            $text = "Email $emailsignup already exists!";
+        } elseif (!ctype_digit($phone_num) && strlen($phone_num) > 7) { // Check if it is all digits - found in functions.php
+            $action['result'] = 'error';
+            $text = "Invalid phone number!";
+        } elseif (strlen($password) < 6) { // Check if password is > 6 characters found in functions.php
+            $action['result'] = 'error';
+            $text = "Password must be atleast 6 characters long!";
         }
-    
+        if($action['result'] != 'error'){
+            //$password = md5($password);
+            //add to the database
+            $add = mysql_query("INSERT INTO `user` (user_id, email, phone_num, password, first, last) VALUES(NULL, '$emailsignup','$phone_num','$password','$firstName','$lastName')");
+            if($add){
+                /*
+                //get the new user id
+                $userid = mysql_insert_id();
+                //create a random key
+                $key = $firstName . $lastName . $emailsignup . date('mY');
+                $key = md5($key);
+                //add confirm row
+                $confirm = mysql_query("INSERT INTO `confirm` VALUES(NULL,'$lastName','$key','$emailsignup')"); 
+                if($confirm){
+                    //include the swift class
+                    include_once 'inc/php/swift/swift_required.php';
+                    //put info into an array to send to the function
+                    $info = array(
+                        'firstName' => $firstName,
+                        'lastName' => $lastName,
+                        'emailsignup' => $emailsignup,
+                        'key' => $key);
+                    //send the emailsignup
+                    if(send_emailsignup($info)){          
+                        //emailsignup sent`````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+                        $action['result'] = 'success';
+                        array_push($text,'Thanks for signing up. Please check your emailsignup for confirmation!');
+                    }else{
+                        $action['result'] = 'error';
+                        array_push($text,'Could not send confirm emailsignup');
+                    }
+                }else{
+                    $action['result'] = 'error';
+                    array_push($text,'Confirm row was not added to the database. Reason: ' . mysql_error());
+                }
+                */
+            // Redirect to homepage
+            header('Location:index.php#tologin');
+            }else{
+                $action['result'] = 'error';
+                array_push($text,'User could not be added to the database. Reason: ' . mysql_error());
+            }
+        }
+        $action['text'] = $text;
     }
-    $action['text'] = $text;
-}
-
 ?>
 <?= show_errors($action); ?>
-
+</head>
 <body>
-
-
-
-
-            <!-- First Section -->
-    
+<!-- First Section -->
 <div class="section bg1 clearfix">         
     <div class="content">
-
         <div class="overlay">
-
                 <div class="overlaycontent" style="padding: 10px 0">
-
                   <h1 style="text-align:center; margin-top: 2%;">
-                    <img class="logo" src="img/originals/nav-logo.png"><a title="" href="#"></a>
+                    <img class="logo" src="img/originals/nav-logo.png">
+                    <a title="" href="#"></a>
                   </h1>
-                    <h2 style="text-align:center; margin-bottom: 2%;">Meeting <strong>- Management</strong>
+                    <h2 style="text-align:center; margin-bottom: 2%;">Meeting 
+                        <strong>- Management</strong>
                     </h2>
                 </div>
             <div class="fullwidth">
-
                 <header>
                     <h1>Welcome to Meetmag!</span></h1>
                 </header>
@@ -207,7 +156,6 @@ if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email
                                     </p>
                                 </form>
                             </div>
-
                             <div id="register" class="animate form">
                                 <form  action="" method="post" autocomplete="on"> 
                                     <h1> Sign up </h1>
@@ -237,7 +185,6 @@ if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email
                                     </p>
                                     <p class="signin button"> 
                                         <input type="submit" value="Sign up" name="signup" />
-                                        
                                     </p>
                                     <p class="change_link">  
                                         Already a member ?
@@ -245,16 +192,14 @@ if (checkUserTable("email", $emailsignup) > 0) { // Can't have an existing email
                                     </p>
                                 </form>
                             </div>
-                            
                         </div>
                     </div>  
                 </section>
-
             </div>
         </div>
     </div>
 </div>
 
-
 </body>
+
 </html>

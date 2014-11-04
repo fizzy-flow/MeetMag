@@ -152,11 +152,4 @@ $.fn.csAccordion = function (args) {
 $(document).ready(function()
                   {
                     $('.demo').csAccordion({ 'accordionTitle': 'Meeting Agendas'}); 
-                    $("#voting div a").click(function() {
-                        $(this).parent().animate({
-                            width: '+=5%'
-                        }, 500);
-                        $(this).prev().html(parseInt($(this).prev().html()) + 1);
-                        return false;
-                    });
                   });

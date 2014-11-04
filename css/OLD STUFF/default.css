@@ -35,15 +35,15 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 }
 
 body {
-/*	font-family: 'Lato', Calibri, Arial, sans-serif;*/
+	font-family: 'Lato', Calibri, Arial, sans-serif;
 /*	color: #b1aea6;
 	background: #fffcf5; */
 	min-height: 800px;
 }
 
 a {
-/*	color: #ccc;*/
-/*	text-decoration: none;*/
+	color: #ccc;
+	text-decoration: none;
 }
 
 a:hover {

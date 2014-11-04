@@ -27,8 +27,9 @@
 
 
     <!-- create meeting -->
-    <link rel="stylesheet" type="text/css" href="css/createmeeting-default.css" />
-    <link rel="stylesheet" type="text/css" href="css/createmeeting-component.css" />
+<!--     <link rel="stylesheet" type="text/css" href="css/createmeeting-default.css" />
+    <link rel="stylesheet" type="text/css" href="css/createmeeting-component.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/createmeeting.css" />
     <link rel="stylesheet" href="feather-webfont/feather.css">
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
     <script type="text/javascript" src="js/gmap3.js"></script>

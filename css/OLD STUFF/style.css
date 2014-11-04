@@ -1,4 +1,4 @@
-/* remove codrops styles and reset the whole thing */
+f/* remove codrops styles and reset the whole thing */
 #container_demo{
 	 text-align: left;
 	 margin: 0;
@@ -468,9 +468,9 @@ font-size: 1em
 
 .icon-project-fix:before {
   content: "f";
-/*  margin-left: -9px;*/
-/*  width: 67px;*/
-/*  font-size: 1em*/
+  margin-left: -9px;
+  width: 67px;
+  font-size: 1em
 }
 
 .icon-settings:before {

@@ -31,7 +31,7 @@ html
 
 body
 {
-/*	font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;*/
+	font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;
 	font-size: 18px;
 	color: #CCC;
 	font-weight: 300;
@@ -80,7 +80,7 @@ body
 }
 #voting div a {
 	border-radius: 0.3em;
-/*	text-decoration: none;*/
+	text-decoration: none;
 	color: #fff;
 	padding: 5px 15px;
 	background: #333;
@@ -110,7 +110,7 @@ ol {
 	*padding: .4em;
 	margin: .5em 0 .5em 2.5em;
 	color: #fff;
-/*	text-decoration: none;*/
+	text-decoration: none;
 	transition: all .3s ease-out;   
 }
 

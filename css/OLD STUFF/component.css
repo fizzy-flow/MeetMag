@@ -39,33 +39,24 @@
 	outline: none;
 }
 
+.dl-menuwrapper button:hover,
+.dl-menuwrapper button.dl-active,
+.dl-menuwrapper ul {
+	background: #aaa;
+}
 
-
-/* action menu */
 .dl-menuwrapper button:after {
 	content: '';
 	position: absolute;
 	width: 68%;
 	height: 5px;
-
+	background: #fff;
 	top: 10px;
 	left: 16%;
-	background: #1ABC9C;
-	box-shadow: 
-		0 10px 0 #1ABC9C, 
-		0 20px 0 #1ABC9C;
-/*	background: #fff;
 	box-shadow: 
 		0 10px 0 #fff, 
-		0 20px 0 #fff;*/
+		0 20px 0 #fff;
 }
-
-.dl-menuwrapper button:hover,
-.dl-menuwrapper button.dl-active,
-.dl-menuwrapper ul {
-/*	background: #aaa;*/
-}
-
 
 .dl-menuwrapper ul {
 	padding: 0;

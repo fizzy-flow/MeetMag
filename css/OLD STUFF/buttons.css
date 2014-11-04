@@ -4,7 +4,7 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner
     border: 0;
 }
 
-/*.btn
+.btn
 {
 	position: relative;
 	display: inline-block;
@@ -23,7 +23,7 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
-}*/
+}
 
 	.btn:after
 	{

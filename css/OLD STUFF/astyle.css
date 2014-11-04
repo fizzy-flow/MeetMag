@@ -1,620 +1,3 @@
-/* mpstyle.css /*
-/** Import CSS **/
-
-@import url("reset.css");
-@import url("animations.css");
-@import url("fonts/fontawesome/font-awesome.css");
-@import url("percentagebar.css");
-@import url("buttons.css");
-
-/** Google Fonts **/
-
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic,900,900italic");
-
-/** Global Styles **/
-
-*
-{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-html
-{
-	height: 100%;
-	overflow: auto;
-	
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-}
-
-body
-{
-	font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;
-	font-size: 18px;
-	color: #CCC;
-	font-weight: 300;
-	line-height: 28px;
-	background: #222;
-}
-
-::selection
-{
-	background: #1ABC9C;
-	color: #FFF;
-}
-
-::-moz-selection
-{
-	background: #1ABC9C;
-	color: #FFF;
-}
-
-/** Voting Style **/
-#voting {
-	color: #fff;
-	font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;
-    }
-    #voting #question {
-        display: block;
-        padding: 20px;
-        letter-spacing: -3px;
-        margin-bottom: 20px;
-        padding: 10px;
-        font-size: 40px;
-    }
-    #voting div {
-        font-weight: bold;
-        letter-spacing: -3px;
-        background: #1ABC9C;
-        margin-bottom: 15px;
-        padding: 10px;
-        font-size: 34px;
-        color: #00000;
-        border-left: 20px solid #333;
-        width: 100px;
-        -webkit-border-radius: 0.5em;
-        -moz-border-radius: 0 0.5em 0.5em 0;
-        border-radius: 0 1.5em 1.5em 0;
-    }
-    #voting div a {
-        border-radius: 0.3em;
-        text-decoration: none;
-        color: #fff;
-        padding: 5px 15px;
-        background: #333;
-        margin: 0 20px;
-    }
-    #voting div a:hover {
-        color: #fff;
-    }
-
-/** Ordered List Styles **/
-ol {
-    counter-reset: li; /* Initiate a counter */
-    list-style: none; /* Remove default numbering */
-    *list-style: decimal; /* Keep using default numbering for IE6/7 */
-    font-size: 18px;
-    font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;
-    padding: 0;
-    margin-bottom: 4em;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-}
-
-
-.rectangle-list a{
-    position: relative;
-    display: block;
-    padding: .4em .4em .4em .8em;
-    *padding: .4em;
-    margin: .5em 0 .5em 2.5em;
-    color: #fff;
-    text-decoration: none;
-    transition: all .3s ease-out;   
-}
-
-.rectangle-list a:hover{
-    background: #1ABC9C;
-}   
-
-.rectangle-list a:before{
-    content: counter(li);
-    counter-increment: li;
-    position: absolute; 
-    left: -2.5em;
-    top: 50%;
-    margin-top: -1em;
-    background: #1ABC9C;
-    height: 2em;
-    width: 2em;
-    line-height: 2em;
-    text-align: center;
-    font-weight: bold;
-}
-
-.rectangle-list a:after{
-    position: absolute; 
-    content: '';
-    border: .5em solid transparent;
-    left: -1em;
-    top: 50%;
-    margin-top: -.5em;
-    transition: all .3s ease-out;               
-}
-
-.rectangle-list a:hover:after{
-    left: -.5em;
-    border-left-color: #1ABC9C;             
-}
-
-a
-{
-/*	color: #1ABC9C;*/
-/*	text-decoration: none;*/
-}
-
-	a:hover
-	{
-		color: #FFF;
-	}
-
-/** Main Layout Styles **/
-
-.section
-{
-	position: relative;
-	width: 100%;
-	
-	min-height: 700px;
-	height: auto !important;
-	height: 700px;
-	
-	overflow: hidden;
-}
-
-	.section.bg1, .section.bg2
-	{
-		width: 100%;
-		
-		min-height: 700px;
-		height: auto !important;
-		height: 700px;
-	}
-	
-		.section.bg1
-		{
-			background: url("../images/bg-1.jpg") no-repeat;
-			background-size: cover;
-		}
-		
-		.section.bg2
-		{
-			background: url("../images/bg-2.jpg") no-repeat;
-			background-size: cover;
-		}
-		
-.section .content
-{
-	width: 100%;
-}
-
-	.section .content .overlay
-	{
-		width: 100%;
-		background: url("../images/overlay.png") repeat;
-	}
-	
-		.section .content .overlay .overlaycontent
-		{
-			margin: 0 auto;
-			width: 80%;
-			max-width: 980px;
-			padding: 80px 0;
-			color: #FFF;
-		}
-		
-		.section .content .overlaycontent h1
-		{
-			margin: 0 0 5px 0;
-			font-weight: 300;
-			text-transform: uppercase;
-			font-size: 60px;
-			line-height: 60px;
-			letter-spacing: -0.6px;
-			color: #1ABC9C;
-		}
-		
-			.section .content .overlaycontent h1 strong
-			{
-				font-weight: 600;
-				letter-spacing: -1px;
-				color: #FFF;
-			}
-			
-		.section .content .overlaycontent h2
-		{
-			margin: 0;
-			font-weight: 300;
-			text-transform: uppercase;
-			font-size: 34px;
-			line-height: 34px;
-			letter-spacing: -0.6px;
-			color: #FFF;
-		}
-		
-			.section .content .overlaycontent h2 strong
-			{
-				font-weight: 600;
-				letter-spacing: -1px;
-			}
-	
-		.section .content .overlaycontent h3
-		{
-			margin: 0;
-			font-weight: 300;
-			text-transform: uppercase;
-			font-size: 27px;
-			line-height: 27px;
-			letter-spacing: -0.6px;
-			color: #FFF;
-			background: #1ABC9C;
-			padding: 10px 14px;
-			
-			-webkit-border-radius: 2px;
-			-moz-border-radius: 2px;
-			border-radius: 2px;
-		}
-		
-			.section .content .overlaycontent h3 strong
-			{
-				font-weight: 600;
-				letter-spacing: -1px;
-			}
-
-	.section .content .fullwidth
-	{
-		width: 100%;
-		background: #222;
-		min-height: 560px;
-		height: auto !important;
-		height: 560px;
-	}
-
-	.section .content .fullwidth .main
-	{
-		margin: 0 auto;
-		width: 80%;
-		max-width: 980px;
-		padding: 40px 0;
-	}
-	
-		.section .content .fullwidth .main p
-		{
-			margin: 0 0 20px 0;
-		}
-		
-			.section .content .fullwidth .main strong
-			{
-				font-weight: 600;
-			}
-		
-		.section .content .fullwidth .main h1,
-		.section .content .fullwidth .main h2,
-		.section .content .fullwidth .main h3,
-		.section .content .fullwidth .main h4,
-		.section .content .fullwidth .main h5
-		{
-			margin: 0 0 20px 0;
-			font-weight: 300;
-			text-transform: uppercase;
-			letter-spacing: -0.6px;
-			font-size: 36px;
-			line-height: 36px;
-			color: #FFF;
-		}
-		
-			.section .content .fullwidth .main h1 strong,
-			.section .content .fullwidth .main h2 strong,
-			.section .content .fullwidth .main h3 strong,
-			.section .content .fullwidth .main h4 strong,
-			.section .content .fullwidth .main h5 strong
-			{
-				font-weight: 600;
-				letter-spacing: -1px;
-			}
-			
-		.section .content .fullwidth .main hr
-		{
-			clear: both;
-			border: 0;
-			height: 0;
-			margin: 0 0 20px 0;
-			border-top: 1px solid #111;
-			border-bottom: 1px solid #333;
-		}
-			
-		/** Countdown Timer **/
-
-		.section .content .fullwidth .main #countdowncont
-		{
-			width: 100%;
-			margin: 0 0 20px 0;
-		}
-
-			.section .content .fullwidth .main #countdowncont ul#countdown li
-			{
-				float: left;
-				width: 25%;
-				margin: 0;
-				list-style-type: none;
-			}
-
-				.section .content .fullwidth .main #countdowncont ul#countdown li span
-				{
-					font-size: 60px;
-					font-weight: 300;
-					color: #FFF;
-					line-height: 60px;
-				}
-
-			.section .content .fullwidth .main #countdowncont ul#countdown li p
-			{
-				color: #1ABC9C;
-				font-weight: 300;
-				text-transform: uppercase;
-				font-size: 13px;
-				margin: 0;
-			}
-			
-		/** Google Map **/
-		
-		.section .content .fullwidth .main .goomap
-		{
-			margin: 0 0 20px 0;
-			background: #333;
-			padding: 10px;
-			
-			-webkit-border-radius: 2px;
-			-moz-border-radius: 2px;
-			border-radius: 2px;
-		}
-		
-		.section .content .fullwidth .main .goomap .gmap3
-		{
-			width: 100%;
-			height: 300px;
-		}
-
-		.section .content .fullwidth .main form#getdirections,
-		.section .content .fullwidth .main form#signupform
-		{
-			width: 100%;
-			margin: 0 0 15px 0;
-		}
-		
-			.section .content .fullwidth .main form#getdirections .directionleft,
-			.section .content .fullwidth .main form#signupform .directionleft
-			{
-				float: left;
-				width: 50%;
-			}
-			
-				.section .content .fullwidth .main form#getdirections .directionleft p.postcodenote,
-				.section .content .fullwidth .main form#signupform .directionleft p.spamnote,
-				.section .content .fullwidth .main form#signupform .directionleft p.success
-				{
-					position: relative;
-					top: 0;
-					right: 0;
-					font-size: 12px;
-					line-height: 12px;
-					font-weight: 600;
-					color: #1ABC9C;
-					margin: 6px 0 0 0;
-				}
-
-				.section .content .fullwidth .main form#getdirections .directionleft input,
-				.section .content .fullwidth .main form#signupform .directionleft input
-				{
-					padding: 11px;
-					width: 100%;
-					border: 2px solid #EEE;
-					background: #EEE;
-					text-align: left;
-					margin: 0;
-					font-family: inherit;
-					font-size: 13px;
-					color: #333;
-					
-					-webkit-appearance: none;
-					
-					-webkit-border-radius: 2px;
-					-moz-border-radius: 2px;
-					border-radius: 2px;
-				}
-				
-					.section .content .fullwidth .main form#getdirections .directionleft input:focus,
-					.section .content .fullwidth .main form#signupform .directionleft input:focus
-					{
-						border: 2px solid #1ABC9C;
-					}
-			
-			.section .content .fullwidth .main form#getdirections .directionright,
-			.section .content .fullwidth .main form#signupform .directionright
-			{
-				float: right;
-				width: 50%;
-				padding: 0 0 0 15px;
-			}
-
-/** Footer **/
-	
-.footercont
-{
-	width: 100%;
-	background: #191919;
-	padding: 40px 0;
-}
-
-	.footercont .footer
-	{
-		margin: 0 auto;
-		width: 80%;
-		max-width: 980px;
-		color: #777;
-	}
-	
-		.footercont .footer #footerleft
-		{
-			float: left;
-		}
-		
-			/** Social Media **/
-			
-			.footercont .footer #footerleft #socialmedia ul
-			{
-				margin: 0 0 20px 0;
-			}
-		
-			.footercont .footer #footerleft #socialmedia ul li
-			{
-				display: inline-block;
-				list-style-type: none;
-				margin: 0 10px;
-			}
-	
-				.footercont .footer #footerleft #socialmedia ul li a
-				{
-					font-size: 27px;
-					color: #555;
-				}
-				
-					.footercont .footer #footerleft #socialmedia ul li a:hover
-					{
-						color: #FFF;
-					}
-		
-		.footercont .footer #footerright
-		{
-			float: right;
-		}
-		
-			.footercont .footer #footerright a
-			{
-				text-indent: -9999px;
-				display: inline-block;
-				background: #212121 url("../images/up-arrow.png") no-repeat center;
-				width: 49px;
-				height: 36px;
-				
-				-webkit-border-radius: 2px;
-				-moz-border-radius: 2px;
-				border-radius: 2px;
-			}
-			
-				.footercont .footer #footerright a:hover
-				{
-					background-color: #1ABC9C;
-				}
-		
-		
-		
-		
-
-/** Responsive Magic **/
-
-@media screen and (max-width: 768px)
-{
-
-	.section.bg1
-	{
-		background: url("../images/mobile/bg-1.jpg") no-repeat;
-		background-size: cover;
-	}
-	
-	.section.bg2
-	{
-		background: url("../images/mobile/bg-2.jpg") no-repeat;
-		background-size: cover;
-	}
-
-	.section .content .main
-	{
-		width: 100%;
-		text-align: center;
-	}
-	
-	.section .content .fullwidth .main #countdowncont ul#countdown li
-	{
-		width: 50%;
-	}
-	
-	.section .overlaycontent
-	{
-		width: 100%;
-		text-align: center;
-	}
-	
-	.footercont .footer
-	{
-		text-align: center;
-	}
-		
-		.footercont .footer #footerleft
-		{
-			float: none;
-			padding: 30px 0;
-		}
-		
-			.footercont .footer #footerleft #socialmedia ul li a
-			{
-				font-size: 23px;
-			}
-		
-		.footercont .footer #footerright
-		{
-			float: none;
-		}
-	
-}
-
-@media screen and (max-width: 480px)
-{
-
-	.section .content .fullwidth .main form#getdirections .directionleft,
-	.section .content .fullwidth .main form#signupform .directionleft
-	{
-		float: none;
-		width: 100%;
-		padding: 0 0 15px 0;
-	}
-	
-		.section .content .fullwidth .main form#getdirections .directionleft input,
-		.section .content .fullwidth .main form#signupform .directionleft input
-		{
-			text-align: center;
-		}
-	
-	.section .content .fullwidth .main form#getdirections .directionright,
-	.section .content .fullwidth .main form#signupform .directionright
-	{
-		float: none;
-		width: 100%;
-		padding: 0;
-	}
-
-	.footercont .footer #socialmedia ul li
-	{
-		margin: 0 5px;
-	}
-	
-}
-
-
-/* mpastyle.css /*
-
 /* Custom Mixins*/
 /* Variables */
 /*	Cream Soda Colours */
@@ -627,11 +10,57 @@ html, body {
   font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;
 }
 
-/* line 20, ../sass/base.scss */
-h1 {
-  font-size: 1.8em;
-  margin-bottom: 0;
-  color: #3a3a3a;
+/**
+ * Checkbox Four
+ */
+.checkboxFour {
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  float: right;
+  display: inline;
+  margin-right: 10px;
+
+  border-radius: 100%;
+  position: relative;
+  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+/**
+ * Create the checkbox button
+ */
+.checkboxFour label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+
+  background: #333;
+
+  -webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+  -moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+  box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+.checkboxFour input{
+  visibility: hidden;
+}
+/**
+ * Create the checked state
+ */
+.checkboxFour input[type=checkbox]:checked + label {
+  background: #5ac9b2;
 }
 
 /* line 26, ../sass/base.scss */
@@ -655,9 +84,9 @@ body {
 
 /* line 42, ../sass/base.scss */
 strong, a {
-/*  color: #5ac9b2;*/
+  color: #5ac9b2;
   font-weight: bold;
-/*  text-decoration: none;*/
+  text-decoration: none;
 }
 
 /* line 49, ../sass/base.scss */
@@ -813,17 +242,13 @@ html, body {
   background: #f7f9f7;
   overflow: hidden;
   position: relative;
-  margin-bottom: 100px;
+  z-index: 1;
 }
-
 /* line 11, ../sass/accordion/_base.scss */
 .csAccordion a {
   color: #333333;
   text-decoration: none;
   cursor: pointer;
-  float: right;
-  font-size: 27px;
-  margin-right: 10px;
 }
 /* line 17, ../sass/accordion/_base.scss */
 .csAccordion ul, .csAccordion li {
@@ -848,8 +273,7 @@ html, body {
   padding-bottom: 0.5em;
   background: #5ac9b2;
   color: white;
-  font-weight: bold;
-  font-size: 1.8em;
+  font-size: 1.5em;
   text-align: center;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
   position: relative;
@@ -967,7 +391,6 @@ html, body {
 }
 /* line 97, ../sass/accordion/_base.scss */
 .csAccordion li > .col.content {
-  color: black;
   height: 0;
   overflow: hidden;
   opacity: 0;
@@ -989,23 +412,16 @@ html, body {
 /* line 116, ../sass/accordion/_base.scss */
 .csAccordion p {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.4em;
-  display: inline;
 }
 /* line 122, ../sass/accordion/_base.scss */
 .csAccordion p.h3 {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #333333;
-}
-
-.csAccordion p.h4 {
-
-  color: #333333;
-  font-size: 1.5em;
-  float: right;
+  display: inline;
 }
 @media (min-width: 720px) {
   /* line 122, ../sass/accordion/_base.scss */
